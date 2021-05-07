@@ -40,7 +40,31 @@ window.onload = () => {
       all[j].replaceWith(top_block);
     }
   }
+
   AOS.init();
+
+  var obj = document.getElementById("dialog_entry");
+  var imgs = obj.getElementsByTagName("img");
+  for (var i=0; i<imgs.length; i++) {
+    // lozad doesn't work with dynamic elements.
+    imgs[i].setAttribute("src", imgs[i].getAttribute("data-src"))
+  }
+  if (obj) {
+    bootbox.dialog({
+      message: obj.innerHTML,
+      size: 'large',
+      onEscape: true,
+      backdrop: true,
+      buttons: {
+        ok: {
+          label: 'Got it!',
+          className: 'btn-primary',
+          callback: function() {},
+        }
+      }
+    })
+    obj.parentElement.removeChild(obj);
+  }
 };
 
 (function () {

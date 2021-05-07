@@ -5,6 +5,12 @@ math: true
 code: true
 ---
 
+<div id="dialog_entry" markdown="1">
+By the end of this page, you will understand how code can make decisions, and use this to create a robot that can expertly work its way out of a maze, with a cryptic password to boot!
+
+![test2](/assets/img/mazeTask.gif)
+</div>
+
 ## Conditionals
 
 So far in our coding tasks our programs have really only been able to do a single task, no matter what input we provide to the program, such as move to a point or print some information.

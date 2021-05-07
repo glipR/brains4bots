@@ -10,6 +10,12 @@
   {% endif %}
 {% endif %}
 
+{% if page.layout == 'post' or page.layout == 'page' %}
+  <!-- image lazy-loading & popup -->
+  <script async
+    src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js"></script>
+{% endif %}
+
 {% if page.layout == 'home'
     or page.layout == 'post'
     or page.layout == 'categories' %}
@@ -50,6 +56,8 @@
 <!-- Animate on Scroll -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Bootbox dialogs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
 <!-- Blocks -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script src="{{ '/assets/js/blocks.js' | relative_url }}"></script>
