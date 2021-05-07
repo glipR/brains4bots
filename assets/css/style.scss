@@ -13,6 +13,22 @@ $tab-count: {{ site.tabs | size | plus: 1 }};
   }
 }
 
+.content-hidden {
+  display: none;
+}
+
+.see-more-container {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.see-more-button {
+  display: inline-block;
+  border-radius: 15px;
+  border-width: 1px;
+  background: transparent;
+}
+
 details.warning-block {
   border-left-color: #e85d04;
 }

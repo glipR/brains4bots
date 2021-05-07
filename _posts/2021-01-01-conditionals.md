@@ -67,6 +67,8 @@ if under_10:
 
 </div>
 
+<div class="continue"></div>
+
 <div class="warning" markdown="1" title="Test Warning">
 
 Beware the beep boops
@@ -100,6 +102,8 @@ The rules for this keyword are very similar. After the first indented block, you
 ~)
 
 Not only do we have these tools, but because the indented blocks are just blocks of code themselves, we can add more `if` statements in the blocks, and indent further to check multiple expressions:
+
+<div class="continue"></div>
 
 @[code_include][python3](code/nest_example.py)
 

@@ -41,15 +41,83 @@ window.onload = () => {
     }
   }
 
+  const newDiv = (index) => {
+    var res = document.createElement("DIV");
+    res.id = `content-show-${index}`;
+    return res;
+  }
+
+  const seeMore = (index) => {
+    var container = document.createElement("DIV");
+    container.classList.add("see-more-container");
+    var res = document.createElement("BUTTON");
+    res.id = `content-button-${index}`
+    res.innerText = "Continue";
+    res.setAttribute("data-aos", "fade-left");
+    res.setAttribute("data-aos-offset", "-20");
+    res.classList.add("see-more-button");
+    res.addEventListener("click", function(){
+      for (var i=0; i<=index+1; i++) {
+        // Show content, hide buttons, unless index+1.
+        var content = document.getElementById(`content-show-${i}`);
+        content.classList.remove("content-hidden");
+        var button = document.getElementById(`content-button-${i}`);
+        if (button) {
+          if (i < index+1) button.parentElement.classList.add("content-hidden");
+          else button.parentElement.classList.remove("content-hidden");
+        }
+      }
+      if (document.getElementById(`content-button-${index+1}`) === null) {
+        // Final button. Show the footer and discus.
+        document.getElementById("main").children[1].classList.remove("content-hidden");
+        document.getElementsByClassName("post-tail-wrapper")[0].classList.remove("content-hidden");
+      }
+    });
+    container.appendChild(res);
+    return container;
+  }
+
+  // Handle see more buttons
+  const reading_blocks = document.getElementsByClassName("continue");
+  if (reading_blocks.length > 0) {
+    const par = reading_blocks[0].parentElement;
+    // Dynamically place content in divs.
+    var divs = [newDiv(0)];
+    var i = 0;
+    const children = par.children;
+    for (var j=0; j<children.length;) {
+      if (children[j].classList.contains("continue")) {
+        divs.push(seeMore(i++));
+        divs.push(newDiv(i));
+        par.removeChild(children[j]);
+      } else {
+        divs[divs.length-1].appendChild(children[j]);
+      }
+    }
+    for (var j=0; j<divs.length; j++) {
+      if (j >= 2) {
+        divs[j].classList.add("content-hidden");
+      }
+      par.appendChild(divs[j]);
+    }
+    if (divs.length > 1) {
+      // Hide discus and footer.
+      document.getElementById("main").children[1].classList.add("content-hidden");
+      document.getElementsByClassName("post-tail-wrapper")[0].classList.add("content-hidden");
+    }
+  }
+
+  // Initialise animate on scroll
   AOS.init();
 
+  // Handle opening post dialog
   var obj = document.getElementById("dialog_entry");
-  var imgs = obj.getElementsByTagName("img");
-  for (var i=0; i<imgs.length; i++) {
-    // lozad doesn't work with dynamic elements.
-    imgs[i].setAttribute("src", imgs[i].getAttribute("data-src"))
-  }
   if (obj) {
+    var imgs = obj.getElementsByTagName("img");
+    for (var i=0; i<imgs.length; i++) {
+      // lozad doesn't work with dynamic elements.
+      imgs[i].setAttribute("src", imgs[i].getAttribute("data-src"))
+    }
     bootbox.dialog({
       message: obj.innerHTML,
       size: 'large',
