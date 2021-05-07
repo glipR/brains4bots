@@ -1,0 +1,14 @@
+---
+---
+
+$tab-count: {{ site.tabs | size | plus: 1 }};
+@import "{{ site.theme }}";
+
+@supports (font-variation-settings: normal) {
+  code {
+    font-family: 'Fira Code VF', monospace;
+    pre {
+      font-family: 'Fira Code VF', monospace;
+    }
+  }
+}
