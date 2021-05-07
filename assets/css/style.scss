@@ -12,3 +12,132 @@ $tab-count: {{ site.tabs | size | plus: 1 }};
     }
   }
 }
+
+details.warning-block {
+  border-left-color: #e85d04;
+}
+
+details.warning-block>summary {
+  background: #e85d0440;
+  border-bottom: 0.1rem solid #e85d0440;
+}
+
+details.warning-block>summary::before {
+  color: #e85d04;
+  content: "\E002";
+}
+
+details.note-block {
+  border-left-color: #fff176;
+}
+
+details.note-block>summary {
+  background: #fff17640;
+  border-bottom: 0.1rem solid #fff17640;
+}
+
+details.note-block>summary::before {
+  color: #cabf45;
+  content: "\E3C9";
+}
+
+details.puzzle-block {
+  border-left-color: #d84315;
+}
+
+details.puzzle-block>summary {
+  background: #d8431540;
+  border-bottom: 0.1rem solid #d8431540;
+}
+
+details.puzzle-block>summary::before {
+  color: #9f0000;
+  content: "\e85d";
+}
+
+details.project-block {
+  border-left-color: #5e35b1;
+}
+
+details.project-block>summary {
+  background: #5e35b140;
+  border-bottom: 0.1rem solid #5e35b140;
+}
+
+details.project-block>summary::before {
+  color: #280680;
+  content: "\e85c";
+}
+
+/* Notes details/summary styling. From https://facelessuser.github.io/pymdown-extensions/extensions/details/ */
+
+details.block {
+  display: block;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  padding: 0 1.2rem;
+  border-left-width: 0.4rem;
+  border-left-style: solid;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+details.block>summary {
+  padding: 0.8rem 1.2rem 0.8rem 4rem;
+  margin: 0 -1.2rem;
+  display: block;
+  outline: none;
+  cursor: pointer;
+}
+
+details.block>summary::before {
+  position: absolute;
+  font-family: "Material Icons";
+  left: 1.2rem;
+  top: 0;
+  font-size: 2rem;
+}
+
+details.block>summary::after {
+  position: absolute;
+  font-family: "Material Icons";
+  right: 1.2rem;
+  top: 0;
+  font-size: 2rem;
+  color: #0000008e;
+  content: "\E313";
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+details.block[open]>summary::after {
+  transform: rotate(180deg);
+}
+
+details.block:not([open])>summary {
+  border-bottom: none;
+}
+
+details.block[open]>summary {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+details.block summary:focus {
+  outline: none;
+}
+
+details.block summary::-webkit-details-marker {
+  display: none;
+}
+
+details.block p {
+  display: inline-block;
+}
+
+details.block p:empty {
+  display: none;
+}
