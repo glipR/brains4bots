@@ -2,19 +2,23 @@ const keys = ["note", "warning", "puzzle", "project"];
 const settings = {
   "note": {
     "open": false,
-    "title": (text) => `${text}`
+    "title": (text) => `${text}`,
+    "animate": null,
   },
   "puzzle": {
     "open": true,
-    "title": (text) => `<b>Puzzle</b>: ${text}`
+    "title": (text) => `<b>Puzzle</b>: ${text}`,
+    "animate": null,
   },
   "warning": {
     "open": true,
-    "title": (text) => `<b>Warning!</b> ${text}`
+    "title": (text) => `<b>Warning!</b> ${text}`,
+    "animate": null,
   },
   "project": {
     "open": true,
-    "title": (text) => `<b>Project</b>: ${text}`
+    "title": (text) => `<b>Project</b>: ${text}`,
+    "animate": "fade-up",
   },
 };
 
@@ -31,9 +35,12 @@ window.onload = () => {
       top_block.classList.add("block", `${keys[i]}-block`);
       if (settings[keys[i]]["open"])
         top_block.setAttribute("open", "true");
+      if (settings[keys[i]]["animate"] != null)
+        top_block.setAttribute("data-aos", settings[keys[i]]["animate"]);
       all[j].replaceWith(top_block);
     }
   }
+  AOS.init();
 };
 
 (function () {
