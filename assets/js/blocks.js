@@ -30,11 +30,12 @@ window.onload = () => {
   // Find all notes, puzzles, project blocks, and apply default settings.
   for (var i=0; i<keys.length; i++) {
     var all = document.getElementsByClassName(keys[i]);
-    for (var j=0; j < all.length; j++) {
+    var length = all.length;
+    for (var j=0; j < length; j++) {
       var top_block = document.createElement("DETAILS");
       var bot_block = document.createElement("SUMMARY");
-      bot_block.innerHTML = settings[keys[i]]["title"](all[j].attributes.title.nodeValue);
-      top_block.innerHTML = all[j].innerHTML;
+      bot_block.innerHTML = settings[keys[i]]["title"](all[0].attributes.title.nodeValue);
+      top_block.innerHTML = all[0].innerHTML;
       top_block.insertBefore(bot_block, top_block.childNodes[0]);
       top_block.classList.add("block", `${keys[i]}-block`);
       if (settings[keys[i]]["open"])
@@ -46,7 +47,7 @@ window.onload = () => {
         complete.classList.add("completion");
         top_block.appendChild(complete);
       }
-      all[j].replaceWith(top_block);
+      all[0].replaceWith(top_block);
     }
   }
 
@@ -62,8 +63,6 @@ window.onload = () => {
     var res = document.createElement("BUTTON");
     res.id = `content-button-${index}`
     res.innerText = "Continue";
-    res.setAttribute("data-aos", "fade-left");
-    res.setAttribute("data-aos-offset", "-20");
     res.classList.add("see-more-button");
     res.addEventListener("click", function(){
       for (var i=0; i<=index+1; i++) {
@@ -126,7 +125,7 @@ window.onload = () => {
   var post = url.split("/").pop();
   //  2. Find completion button locations and replace with correct element
   const completions = document.getElementsByClassName("completion");
-  const length = completions.length;
+  length = completions.length;
   for (var i=0; i<length; i++) {
     if (window.completion_tracker.getCompletion(post, i+1, length+1)) {
       completions[0].parentElement.removeChild(completions[0]);
