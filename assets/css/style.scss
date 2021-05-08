@@ -78,7 +78,7 @@ details.note-block>summary {
 
 details.note-block>summary::before {
   color: #cabf45;
-  content: "\E3C9";
+  content: "\e869";
 }
 
 details.puzzle-block {
@@ -92,7 +92,7 @@ details.puzzle-block>summary {
 
 details.puzzle-block>summary::before {
   color: #9f0000;
-  content: "\e85d";
+  content: "\f1c0";
 }
 
 details.project-block {
@@ -106,7 +106,7 @@ details.project-block>summary {
 
 details.project-block>summary::before {
   color: #280680;
-  content: "\e85c";
+  content: "\ef75";
 }
 
 /* Notes details/summary styling. From https://facelessuser.github.io/pymdown-extensions/extensions/details/ */
