@@ -4,21 +4,25 @@ const settings = {
     "open": false,
     "title": (text) => `${text}`,
     "animate": null,
+    "add_completion": false,
   },
   "puzzle": {
     "open": true,
     "title": (text) => `<b>Puzzle</b>: ${text}`,
     "animate": null,
+    "add_completion": true,
   },
   "warning": {
     "open": true,
     "title": (text) => `<b>Warning!</b> ${text}`,
     "animate": null,
+    "add_completion": false,
   },
   "project": {
     "open": true,
     "title": (text) => `<b>Project</b>: ${text}`,
     "animate": "fade-up",
+    "add_completion": true,
   },
 };
 
@@ -37,6 +41,11 @@ window.onload = () => {
         top_block.setAttribute("open", "true");
       if (settings[keys[i]]["animate"] != null)
         top_block.setAttribute("data-aos", settings[keys[i]]["animate"]);
+      if (settings[keys[i]]["add_completion"]) {
+        var complete = document.createElement("DIV");
+        complete.classList.add("completion");
+        top_block.appendChild(complete);
+      }
       all[j].replaceWith(top_block);
     }
   }
@@ -104,6 +113,34 @@ window.onload = () => {
       // Hide discus and footer.
       document.getElementById("main").children[1].classList.add("content-hidden");
       document.getElementsByClassName("post-tail-wrapper")[0].classList.add("content-hidden");
+    }
+  }
+
+  // Handle completion buttons'
+  //  1. Find post name.
+  var url = window.location.href;
+  url = url.split("#")[0];
+  if (url[url.length-1] === "/") {
+    url = url.substr(0, url.length-1);
+  }
+  var post = url.split("/").pop();
+  //  2. Find completion button locations and replace with correct element
+  const completions = document.getElementsByClassName("completion");
+  const length = completions.length;
+  for (var i=0; i<length; i++) {
+    if (window.completion_tracker.getCompletion(post, i, length)) {
+      completions[0].parentElement.removeChild(completions[0]);
+    } else {
+      var button = document.createElement("button");
+      button.classList.add("completion-button");
+      button.id = `completion-button-${i}`;
+      button.innerHTML = "<span>Complete</span>";
+      button.addEventListener("click", function(){
+        var idx = parseInt(button.id.split("-").pop());
+        window.completion_tracker.setCompletion(post, idx, length, true);
+        button.parentElement.removeChild(button);
+      });
+      completions[0].replaceWith(button);
     }
   }
 

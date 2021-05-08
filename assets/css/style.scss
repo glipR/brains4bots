@@ -29,6 +29,30 @@ $tab-count: {{ site.tabs | size | plus: 1 }};
   background: transparent;
 }
 
+.completion-button {
+  background: #1ab21ab0;
+  border-radius: 15px;
+  border-width: 0;
+  font-size: larger;
+  color: var(--body-bg);
+  line-height: 40px;
+  position: relative;
+  width: 140px;
+  text-align: left;
+  display: block;
+  margin-bottom: 5px;
+  float: right;
+}
+
+.completion-button::after {
+  font-family: "Material Icons";
+  font-size: 2rem;
+  content: "\E876";
+  position: absolute;
+  top: 1px;
+  right: 10px;
+}
+
 details.warning-block {
   border-left-color: #e85d04;
 }
