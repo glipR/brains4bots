@@ -13,10 +13,17 @@ $tab-count: {{ site.tabs | size | plus: 1 }};
   }
 }
 
-#main > div.row {
-  // Fix for ignoring panel.
-  padding-right: calc((100% - 1150px) / 2);
-  padding-left: 20px;
+html[mode="dark"] .highlight .nn { color: #A6E22E!important; } /* Name.Namespace */
+html:not([mode])  .highlight .nn, html[mode="light"] .highlight .nn {
+  color: #81af24!important;
+} /* Name.Namespace */
+
+@media (min-width:1150px) {
+  #page {
+    // Fix for ignoring panel.
+    padding-right: calc((100% - 1100px))!important;
+    // padding-left: calc((100% - 1150px) / 2)!important;
+  }
 }
 
 .task_pill {
