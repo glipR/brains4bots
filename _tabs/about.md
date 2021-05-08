@@ -1,6 +1,8 @@
 ---
 title: About
 icon: fas fa-info
+layout: post
+toc: true
 order: 2
 ---
 
