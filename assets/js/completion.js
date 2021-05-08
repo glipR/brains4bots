@@ -50,7 +50,7 @@ class CompletionTracker {
     }
     return this.completion[post].reduce((a, b) => {
       return a + b;
-    }) / this.completion[post].length;
+    }, 0) / this.completion[post].length;
   }
 
 }
