@@ -128,7 +128,7 @@ window.onload = () => {
   const completions = document.getElementsByClassName("completion");
   const length = completions.length;
   for (var i=0; i<length; i++) {
-    if (window.completion_tracker.getCompletion(post, i, length)) {
+    if (window.completion_tracker.getCompletion(post, i+1, length+1)) {
       completions[0].parentElement.removeChild(completions[0]);
     } else {
       var button = document.createElement("button");
@@ -137,12 +137,15 @@ window.onload = () => {
       button.innerHTML = "<span>Complete</span>";
       button.addEventListener("click", function(){
         var idx = parseInt(button.id.split("-").pop());
-        window.completion_tracker.setCompletion(post, idx, length, true);
-        button.parentElement.removeChild(button);
+        window.completion_tracker.setCompletion(post, idx+1, length+1, true);
+        $(button).fadeOut();
+        // button.parentElement.removeChild(button);
       });
       completions[0].replaceWith(button);
     }
   }
+  // We've read the page, so mark completion 0 as done.
+  completion_tracker.setCompletion(post, 0, length+1, true);
 
   // Initialise animate on scroll
   AOS.init();
