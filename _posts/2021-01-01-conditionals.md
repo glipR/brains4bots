@@ -8,7 +8,9 @@ code: true
 <div id="dialog_entry" markdown="1">
 By the end of this page, you will understand how code can make decisions, and use this to create a robot that can expertly work its way out of a maze, with a cryptic password to boot!
 
-![test2](/assets/img/mazeTask.gif)
+<div markdown="1" style="text-align: center">
+  ![test2](/assets/img/mazeTask.gif){: width="70%"}
+</div>
 </div>
 
 ## Conditionals

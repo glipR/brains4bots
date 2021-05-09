@@ -34,6 +34,22 @@ html:not([mode]) #sidebar, html[mode="light"] #sidebar {
   );
 }
 
+.modal-content {
+  background-color: var(--body-bg);
+}
+
+html[mode="dark"] {
+  .modal-dialog {
+    border: 1px solid var(--search-icon-color);
+  }
+  .bootbox-close-button {
+    color: #fff;
+  }
+  .modal-footer {
+    border-top-color: var(--search-tag-bg);
+  }
+}
+
 .task_pill {
   border: 2px solid black;
   border-radius: 20px;
