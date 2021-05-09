@@ -125,31 +125,34 @@ window.onload = () => {
   var post = url.split("/").pop();
   //  2. Find completion button locations and replace with correct element
   const completions = document.getElementsByClassName("completion");
-  length = completions.length;
-  for (var i=0; i<length; i++) {
-    if (window.completion_tracker.getCompletion(post, i+1, length+1)) {
+  var comp_length = completions.length;
+  for (var i=0; i<comp_length; i++) {
+    if (window.completion_tracker.getCompletion(post, i+1, comp_length+1)) {
       completions[0].parentElement.removeChild(completions[0]);
     } else {
       var button = document.createElement("button");
       button.classList.add("completion-button");
       button.id = `completion-button-${i}`;
       button.innerHTML = "<span>Complete</span>";
-      button.addEventListener("click", function(){
-        var idx = parseInt(button.id.split("-").pop());
-        window.completion_tracker.setCompletion(post, idx+1, length+1, true);
-        $(button).fadeOut();
-        // button.parentElement.removeChild(button);
+      button.addEventListener("click", function(e){
+        var t = e.target;
+        if (t.localName != "button") {
+          t = t.parentElement;
+        }
+        var idx = parseInt(t.id.split("-").pop());
+        window.completion_tracker.setCompletion(post, idx+1, comp_length+1, true);
+        $(t).fadeOut();
       });
       completions[0].replaceWith(button);
     }
   }
   // We've read the page, so mark completion 0 as done.
-  completion_tracker.setCompletion(post, 0, length+1, true);
+  completion_tracker.setCompletion(post, 0, comp_length+1, true);
 
   // Handle hint buttons
   const hints = document.getElementsByClassName("hint");
-  length = hints.length;
-  for (var i=0; i<length; i++) {
+  var hint_length = hints.length;
+  for (var i=0; i<hint_length; i++) {
     var title = hints[0].getAttribute("title")
     if (title === null) title = "Hint";
     var text = `<b>${title}</b>: ${hints[0].innerText}`;
