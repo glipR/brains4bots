@@ -26,6 +26,14 @@ html:not([mode])  .highlight .nn, html[mode="light"] .highlight .nn {
   }
 }
 
+html:not([mode]) #sidebar, html[mode="light"] #sidebar {
+  background: radial-gradient(
+    circle,
+    rgba(90, 105, 137, 1) 0%,
+    rgba(35, 37, 46, 1) 100%
+  );
+}
+
 .task_pill {
   border: 2px solid black;
   border-radius: 20px;
