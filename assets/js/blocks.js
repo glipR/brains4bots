@@ -115,7 +115,7 @@ window.onload = () => {
     }
   }
 
-  // Handle completion buttons'
+  // Handle completion buttons
   //  1. Find post name.
   var url = window.location.href;
   url = url.split("#")[0];
@@ -146,6 +146,45 @@ window.onload = () => {
   // We've read the page, so mark completion 0 as done.
   completion_tracker.setCompletion(post, 0, length+1, true);
 
+  // Handle hint buttons
+  const hints = document.getElementsByClassName("hint");
+  length = hints.length;
+  for (var i=0; i<length; i++) {
+    var title = hints[0].getAttribute("title")
+    if (title === null) title = "Hint";
+    var text = `<b>${title}</b>: ${hints[0].innerText}`;
+    var key = hints[0].getAttribute("key");
+
+    var hint_opened = document.createElement("p");
+    hint_opened.innerHTML = text;
+
+    if (hint_tracker.isUnlocked(post, key)) {
+      hints[0].replaceWith(hint_opened);
+    } else {
+      var button = document.createElement("button");
+      button.classList.add("hint-button");
+      button.id = `hint-button-${key}`;
+      button.setAttribute("key", key);
+      button.setAttribute("hint-text", hint_opened.innerHTML);
+      button.innerHTML = `<span class="coin_icon">${hint_tracker.coins}</span><span>${title}</span>`;
+      button.addEventListener("click", function(e){
+        var t = e.target.parentElement;
+        var key = t.getAttribute("key");
+        var hint_text = document.createElement("p");
+        hint_text.innerHTML = t.getAttribute("hint-text");
+        if (hint_tracker.unlockHint(post, key)) {
+          $(t).fadeOut({ complete: () => {
+            t.replaceWith(hint_text);
+          }});
+          const el = document.getElementsByClassName("coin_icon");
+          for (var j=0; j<el.length; j++) {
+            el[j].innerHTML = hint_tracker.coins;
+          }
+        }
+      });
+      hints[0].replaceWith(button);
+    }
+  }
   // Initialise animate on scroll
   AOS.init();
 

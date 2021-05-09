@@ -186,11 +186,11 @@ else:
     print("Stay cool and hydrated. Extreme fire danger.")
 ```
 
-*Hint 1 (Highlight text to reveal)*: <span class="white">Try entering the celsius for a few values and see when the output is incorrect. Then run through the code and see what is going wrong.</span>
-
-*Hint 2 (Highlight text to reveal)*: <span class="white">The code is wrong for 7, 18 and 26 celsius. Each of these are caused by a different bug.</span>
-
-*Hint 3 (Highlight text to reveal)*: <span class="white">The above celsius readings can be fixed by changing lines 4, 5 and 14 respectively (The last one requires you to make a new line, not just edit the old one).</span>
+<div>
+<div class="hint" key="weather-1" title="Hint 1">Try entering the celsius for a few values and see when the output is incorrect. Then run through the code and see what is going wrong.</div>
+<div class="hint" key="weather-2" title="Hint 2">The code is wrong for 7, 18 and 26 celsius. Each of these are caused by a different bug.</div>
+<div class="hint" key="weather-3" title="Hint 3">The above celsius readings can be fixed by changing lines 4, 5 and 14 respectively (The last one requires you to make a new line, not just edit the old one).</div>
+</div>
 
 </div>
 
@@ -389,10 +389,10 @@ To make the process a bit less tedious, here are some measurements of the field:
 
 Edit the contents of `code.py` to complete the task!
 
-*Hint 1 (Highlight text to reveal)*: <span class="white">Provided you calculated the robot speed in the previous lesson, you can reuse this with the measurements above.</span>
-
-*Hint 2 (Highlight text to reveal)*: <span class="white">First try moving to the first coloured square, and printing its colour (red, green or blue). Use the color.rgb values to determine which colour it is. Do you get the colour values you expect? You might need to wait a bit before getting color.rbg by using time.sleep(0.1).</span>
-
-*Hint 3 (Highlight text to reveal)*: <span class="white">Depending on the colour, all you want to alter is how high up the map you should move. The rest of the actions required (Move left then right to activate the button, move back down, and then shift over to the next colour) should be the same.</span>
+<div>
+<div class="hint" key="project-1" title="Hint 1">Provided you calculated the robot speed in the previous lesson, you can reuse this with the measurements above.</div>
+<div class="hint" key="project-2" title="Hint 2">First try moving to the first coloured square, and printing its colour (red, green or blue). Use the color.rgb values to determine which colour it is. Do you get the colour values you expect? You might need to wait a bit before getting color.rbg by using time.sleep(0.1).</div>
+<div class="hint" key="project-3" title="Hint 3">Depending on the colour, all you want to alter is how high up the map you should move. The rest of the actions required (Move left then right to activate the button, move back down, and then shift over to the next colour) should be the same.</div>
+</div>
 
 </div>

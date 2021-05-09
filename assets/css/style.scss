@@ -125,6 +125,34 @@ html[mode="dark"] {
   right: 10px;
 }
 
+.hint-button {
+  display: block;
+  background: #ffc107b0;
+  border-radius: 15px;
+  border-width: 0;
+  width: 100px;
+  position: relative;
+  font-size: larger;
+  color: var(--body-bg);
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+.coin_icon::before {
+  font-family: "Material Icons";
+  font-size: 2rem;
+  content: "\ef4a";
+  position: absolute;
+  bottom: -11px;
+  left: 2px;
+  color: #ffc10770;
+}
+
+.coin_icon {
+  float: left;
+  color: var(--body-bg);
+}
+
 details.warning-block {
   border-left-color: #e85d04;
 }
