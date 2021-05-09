@@ -19,6 +19,8 @@ You can complete these projects using physical EV3 (Lego) robots. These robots c
 TODO: Physical bot doing maze task.
 </div>
 
+Teachers: You can learn more about the program [here](/bot-brains/about). Students: Keep going!
+
 ## Where do I start?
 
 Before we can start coding, we need to do a bit of setup and installation.
@@ -27,15 +29,15 @@ Click the buttons below to get started!
 
 <div class="task_pill" style="width: max(60%, 300px)">
   <div class="pill_object" page="conditionals">
-    <a href="#" title="Installing Python and VSCode"><span class="pillbox_number">1</span></a>
+    <a href="#" title="Installing Python and VSCode" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">1</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object" page="conditionals">
-    <a href="#" title="Installing EV3Sim"><span class="pillbox_number">2</span></a>
+    <a href="#" title="Installing EV3Sim" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">2</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object" page="not_conditionals">
-    <a href="#" title="Running Code"><span class="pillbox_number">3</span></a>
+    <a href="#" title="Running Code" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">3</span></a>
   </div>
 </div>
 
@@ -45,27 +47,27 @@ Provided you've read the above documents, we can start on these projects! This s
 
 <div class="task_pill" style="width: 90%; margin-left: 5%; margin-right: 5%;">
   <div class="pill_object" page="conditionals">
-    <a href="#" title="Installing Python and VSCode"><span class="pillbox_number">1</span></a>
+    <a href="#" title="Installing Python and VSCode" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">1</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object" page="conditionals">
-    <a href="#" title="Installing EV3Sim"><span class="pillbox_number">2</span></a>
+    <a href="#" title="Installing EV3Sim" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">2</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object" page="not_conditionals">
-    <a href="#" title="Running Code"><span class="pillbox_number">3</span></a>
+    <a href="#" title="Running Code" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">3</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object" page="not_conditionals">
-    <a href="#" title="Running Code"><span class="pillbox_number">4</span></a>
+    <a href="#" title="Running Code" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">4</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object" page="not_conditionals">
-    <a href="#" title="Running Code"><span class="pillbox_number">5</span></a>
+    <a href="#" title="Running Code" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">5</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object" page="not_conditionals">
-    <a href="#" title="Running Code"><span class="pillbox_number">6</span></a>
+    <a href="#" title="Running Code" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">6</span></a>
   </div>
 </div>
 
