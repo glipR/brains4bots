@@ -2,7 +2,7 @@
 layout: page
 ---
 
-# Learn Coding
+# Bot Brains
 
 Interested in learning to code? Want to work on fun projects with robots? Then look no further!
 
