@@ -1,8 +1,8 @@
 class HintTracker {
 
   constructor() {
-    this.hints = sessionStorage.getItem("hints");
-    this.coins = sessionStorage.getItem("coins");
+    this.hints = localStorage.getItem("hints");
+    this.coins = localStorage.getItem("coins");
     if (this.hints === null) {
       this.hints = new Object();
     } else {
@@ -22,8 +22,8 @@ class HintTracker {
     if (this.coins > 0 && !this.hints[post].hasOwnProperty(key)) {
       this.hints[post][key] = true;
       this.coins -= 1;
-      sessionStorage.setItem("hints", JSON.stringify(this.hints));
-      sessionStorage.setItem("coins", this.coins.toString());
+      localStorage.setItem("hints", JSON.stringify(this.hints));
+      localStorage.setItem("coins", this.coins.toString());
       return true;
     } else {
       return false;

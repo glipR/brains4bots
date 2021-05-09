@@ -1,7 +1,7 @@
 class CompletionTracker {
 
   constructor() {
-    this.completion = sessionStorage.getItem("completion");
+    this.completion = localStorage.getItem("completion");
     if (this.completion === null) {
       this.completion = new Object();
     } else {
@@ -19,7 +19,7 @@ class CompletionTracker {
       }
     }
     this.completion[post][index] = value;
-    sessionStorage.setItem("completion", JSON.stringify(this.completion));
+    localStorage.setItem("completion", JSON.stringify(this.completion));
   }
 
   getCompletion(post, index, max_completions) {
@@ -36,7 +36,7 @@ class CompletionTracker {
       changed = true;
     }
     if (changed) {
-      sessionStorage.setItem("completion", JSON.stringify(this.completion));
+      localStorage.setItem("completion", JSON.stringify(this.completion));
     }
     return this.completion[post][index];
   }
@@ -44,7 +44,7 @@ class CompletionTracker {
   getCompletionPct(post) {
     if (!this.completion.hasOwnProperty(post)) {
       this.completion[post] = [];
-      sessionStorage.setItem("completion", JSON.stringify(this.completion));
+      localStorage.setItem("completion", JSON.stringify(this.completion));
       // This doesn't count.
       return 0;
     }
