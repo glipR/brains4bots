@@ -38,11 +38,11 @@ window.onload = () => {
       top_block.innerHTML = all[0].innerHTML;
       top_block.insertBefore(bot_block, top_block.childNodes[0]);
       top_block.classList.add("block", `${keys[i]}-block`);
-      if (settings[keys[i]]["open"])
+      if ((all[0].getAttribute("open") === null && settings[keys[i]]["open"]) || all[0].getAttribute("open") === "1")
         top_block.setAttribute("open", "true");
       if (settings[keys[i]]["animate"] != null)
         top_block.setAttribute("data-aos", settings[keys[i]]["animate"]);
-      if (settings[keys[i]]["add_completion"]) {
+      if ((all[0].getAttribute("add_completion") === null && settings[keys[i]]["add_completion"]) || all[0].getAttribute("add_completion") === "1") {
         var complete = document.createElement("DIV");
         complete.classList.add("completion");
         top_block.appendChild(complete);
