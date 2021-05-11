@@ -21,7 +21,7 @@ const settings = {
   "project": {
     "open": true,
     "title": (text) => `<b>Project</b>: ${text}`,
-    "animate": "fade-up",
+    "animate": null,
     "add_completion": true,
   },
 };
