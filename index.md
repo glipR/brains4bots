@@ -2,7 +2,7 @@
 layout: page
 ---
 
-# Bot Brains
+# Brains 4 Bots
 
 Interested in learning to code? Want to work on fun projects with robots? Then look no further!
 
@@ -19,7 +19,7 @@ You can complete these projects using physical EV3 (Lego) robots. These robots c
 TODO: Physical bot doing maze task.
 </div>
 
-Teachers: You can learn more about the program [here](/bot-brains/about). Students: Keep going!
+Teachers: You can learn more about the program [here](/about). Students: Keep going!
 
 ## Where do I start?
 
