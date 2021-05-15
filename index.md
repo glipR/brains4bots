@@ -2,6 +2,8 @@
 layout: page
 ---
 
+# WORK IN PROGRESS
+
 # Brains 4 Bots
 
 Interested in learning to code? Want to work on fun projects with robots? Then look no further!
