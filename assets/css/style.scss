@@ -282,3 +282,14 @@ details.block p {
 details.block p:empty {
   display: none;
 }
+
+@media (min-width:1150px) {
+  .code_container {
+    display: flex;
+    align-items: stretch;
+    div {
+      flex-grow: 1;
+      position: relative;
+    }
+  }
+}
