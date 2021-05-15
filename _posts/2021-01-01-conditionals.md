@@ -265,7 +265,7 @@ Let's start by adding these sensors to your testing bot. You can do this by pres
 </div>
 <div style="width: 60%; padding-left: 5%; padding-bottom: 32px; float: left; ">
 <video width="100%" controls>
-    <source src="/assets/video/devices.mp4">
+    <source src="/brains4bots/assets/video/devices.mp4">
     Your browser does not support video playback.
 </video>
 </div>
