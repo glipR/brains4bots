@@ -19,7 +19,7 @@ You can complete these projects using physical EV3 (Lego) robots. These robots c
 TODO: Physical bot doing maze task.
 </div>
 
-Teachers: You can learn more about the program [here](/brains4bots/about). Students: Keep going!
+Teachers: You can learn more about the program [here](/about). Students: Keep going!
 
 ## Where do I start?
 
