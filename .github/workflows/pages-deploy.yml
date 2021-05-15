@@ -30,6 +30,7 @@ jobs:
           baseurl="$(grep '^baseurl:' _config.yml | sed "s/.*: *//;s/['\"]//g;s/#.*//")"
           if [[ -n $baseurl ]]; then
             echo "BASE_URL=$baseurl" >> $GITHUB_ENV
+            echo "$baseurl"
           fi
 
       - name: Build Site
