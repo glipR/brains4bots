@@ -171,7 +171,10 @@ window.onload = () => {
       button.setAttribute("hint-text", hint_opened.innerHTML);
       button.innerHTML = `<span class="coin_icon">${hint_tracker.coins}</span><span>${title}</span>`;
       button.addEventListener("click", function(e){
-        var t = e.target.parentElement;
+        var t = e.target;
+        while (t.nodeName != "BUTTON") {
+          t = t.parentElement;
+        }
         var key = t.getAttribute("key");
         var hint_text = document.createElement("p");
         hint_text.innerHTML = t.getAttribute("hint-text");
