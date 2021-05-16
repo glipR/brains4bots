@@ -202,19 +202,20 @@ window.onload = () => {
       // lozad doesn't work with dynamic elements.
       imgs[i].setAttribute("src", imgs[i].getAttribute("data-src"))
     }
-    bootbox.dialog({
-      message: obj.innerHTML,
-      size: 'large',
-      onEscape: true,
-      backdrop: true,
-      buttons: {
-        ok: {
-          label: 'Got it!',
-          className: 'btn-primary',
-          callback: function() {},
+    if (dialog_tracker.shouldOpen(post))
+      bootbox.dialog({
+        message: obj.innerHTML,
+        size: 'large',
+        onEscape: true,
+        backdrop: true,
+        buttons: {
+          ok: {
+            label: 'Got it!',
+            className: 'btn-primary',
+            callback: function() {},
+          }
         }
-      }
-    })
+      });
     obj.parentElement.removeChild(obj);
   }
 };
