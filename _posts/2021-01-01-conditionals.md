@@ -22,6 +22,8 @@ Coming back to the similarities with a recipe book, some recipes give different 
 
 ### IF
 
+<div class="code_container" markdown="1">
+
 ```python
 # Give me a number
 x = int(input("Your number: "))
@@ -32,16 +34,20 @@ if x < 10:
     print("That is a pretty small number")
 
 print(f"Your number was {x}.")
-
-### Output ###
-# First run
-# >>> Your number: 11
-# >>> Your number was 11.
-# Second run
-# >>> Your number: 3
-# >>> That is a pretty small number
-# >>> Your number was 3.
 ```
+
+```text
+### Output ###
+First run
+>>> Your number: 11
+>>> Your number was 11.
+Second run
+>>> Your number: 3
+>>> That is a pretty small number
+>>> Your number was 3.
+```
+
+</div>
 
 The example above showcases the first of these conditionals. The `if` keyword is followed by an expression, the character `:`, and then a block of code that is *indented with a tab* (Indented just means you've got some empty space before the line). The indented block will then only be run if the expression after the `if` keyword is true. So if `x=3`, then both `print`s would be run. And if `x = 11`, then only the second `print` would be run because it is not indented.
 
@@ -79,6 +85,8 @@ if under_10:
 
 That's not the only tool we have however. Often you want to also do something if the expression is false:
 
+<div class="code_container" markdown="1">
+
 ```python
 # Give me a number
 x = int(input("Your number: "))
@@ -88,16 +96,21 @@ if x < 10:
 else:
     print("That is a respectably sized number")
 print(f"Your number was {x}.")
-### Output ###
-# First run
-# >>> Your number: 32
-# >>> That is a respectably sized number
-# >>> Your number was 32.
-# Second run
-# >>> Your number: 7
-# >>> That is a pretty small number
-# >>> Your number was 7.
 ```
+
+```text
+### Output ###
+First run
+>>> Your number: 32
+>>> That is a respectably sized number
+>>> Your number was 32.
+Second run
+>>> Your number: 7
+>>> That is a pretty small number
+>>> Your number was 7.
+```
+
+</div>
 
 The rules for this keyword are very similar. After the first indented block, you can add the `else` keyword, the character `:`, and then another indented block. This block then only gets run when the first statement is not true (aka false!).
 
@@ -132,6 +145,8 @@ Part 2: How would we change the code to allow for 3 attempts, rather than 2?
 
 Here's another example of if blocks within if blocks, in case you need a bit more:
 
+<div class="code_container" markdown="1">
+
 ```python
 # Give me a number
 x = int(input("Your number: "))
@@ -148,16 +163,21 @@ else:
         # This code is only executed when both expressions are false.
         print("That is a respectably sized number")
 print(f"Your number was {x}.")
-### Output ###
-# First run
-# >>> Your number: 32
-# >>> That is a large number
-# >>> Your number was 32.
-# Second run
-# >>> Your number: 20
-# >>> That is a respectably sized number
-# >>> Your number was 20.
 ```
+
+```text
+### Output ###
+First run
+>>> Your number: 32
+>>> That is a large number
+>>> Your number was 32.
+Second run
+>>> Your number: 20
+>>> That is a respectably sized number
+>>> Your number was 20.
+```
+
+</div>
 
 <div class="continue"></div>
 
@@ -200,6 +220,8 @@ else:
 
 Moving our code to the right everytime we nest conditionals can be a bit annoying though. For this we have yet another tool:
 
+<div class="code_container" markdown="1">
+
 ```python
 # Give me a number
 x = int(input("Your number: "))
@@ -213,19 +235,26 @@ elif x <= 30:
 else:
     print("That number is truly massive")
 print(f"Your number was {x}.")
-### Output ###
-# First run
-# >>> Your number: 32
-# >>> That number is truly massive
-# >>> Your number was 32.
-# Second run
-# >>> Your number: 25
-# >>> Getting bigger
-# >>> Your number was 25.
 ```
+
+```text
+### Output ###
+First run
+>>> Your number: 32
+>>> That number is truly massive
+>>> Your number was 32.
+Second run
+>>> Your number: 25
+>>> Getting bigger
+>>> Your number was 25.
+```
+
+</div>
 
 The `elif` keyword (Shortening of `else` then `if`) can be placed after the indented block of an `if` statement, or another `elif` statement.
 The indented block after an `elif` keyword is run only if the expression after the `elif` keyword is true, and all other previous expressions (in the `elif` or `if` statements above) are false. Note that this only checks up until the first `if` statement it spots:
+
+<div class="code_container" markdown="1">
 
 ```python
 # Give me a number
@@ -241,17 +270,21 @@ elif x == 32:
 elif x == 32:
     # Checks x < 10 and x==32, but if x==32, it was true earlier.
     print("I don't :(")
-
-### Output ###
-# First run
-# >>> Your number: 3
-# >>> I get printed!
-# >>> I get printed if x < 10
-# Second run
-# >>> Your number: 32
-# >>> I get printed!
-# >>> I get printed if x == 32
 ```
+
+```text
+### Output ###
+First run
+>>> Your number: 3
+>>> I get printed!
+>>> I get printed if x < 10
+Second run
+>>> Your number: 32
+>>> I get printed!
+>>> I get printed if x == 32
+```
+
+</div>
 
 <div class="continue"></div>
 
@@ -326,6 +359,8 @@ In order to wait for 3 seconds, you first need to `import time` at the top of yo
 
 One last tool we can use in our toolbox are the terms `and`, `or` and `not`. These give us a way to combine or modify expressions to make code easier to read.
 
+<div class="code_container" markdown="1">
+
 ```python
 expression_1 = False
 expression_2 = True
@@ -369,13 +404,17 @@ else:
 # Is equivalent to
 if not expression_1:
     print("NOT!")
-
-### Output ###
-# >>> OR!
-# >>> OR!
-# >>> NOT!
-# >>> NOT!
 ```
+
+```text
+### Output ###
+>>> OR!
+>>> OR!
+>>> NOT!
+>>> NOT!
+```
+
+</div>
 
 <div class="project" markdown="1" title="Coloured Padlock">
 
