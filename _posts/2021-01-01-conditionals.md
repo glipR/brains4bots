@@ -5,6 +5,8 @@ math: true
 code: true
 ---
 
+<!-- TODO: Move motors to the front of this page. Use them to motivate most puzzles. -->
+
 <div id="dialog_entry" markdown="1">
 By the end of this page, you will understand how code can make decisions, and use this to create a robot that can expertly work its way out of a maze, with a cryptic password to boot!
 
