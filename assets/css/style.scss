@@ -297,5 +297,11 @@ details.block p:empty {
         height: 100%;
       }
     }
+
+    div.language-text {
+      td.rouge-gutter {
+        display: none;
+      }
+    }
   }
 }
