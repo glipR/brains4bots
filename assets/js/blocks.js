@@ -155,7 +155,7 @@ window.onload = () => {
   for (var i=0; i<hint_length; i++) {
     var title = hints[0].getAttribute("title")
     if (title === null) title = "Hint";
-    var text = `<b>${title}</b>: ${hints[0].innerText}`;
+    var text = `<b>${title}</b>: ${hints[0].innerHTML}`;
     var key = hints[0].getAttribute("key");
 
     var hint_opened = document.createElement("p");
