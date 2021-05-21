@@ -48,16 +48,16 @@ Click the buttons below to get started!
 Provided you've read the above documents, we can start on these projects! This should take you through the very basics of programming, and the very basics of talking with robots.
 
 <div class="task_pill" style="width: 90%; margin-left: 5%; margin-right: 5%;">
-  <div class="pill_object" page="conditionals">
-    <a href="#" title="Installing Python and VSCode" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">1</span></a>
+  <div class="pill_object" page="basics">
+    <a href="/posts/basics" title="Basics of Python" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">1</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object" page="conditionals">
-    <a href="#" title="Installing EV3Sim" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">2</span></a>
+    <a href="/posts/conditionals" title="Sensors and Conditionals" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">2</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
-  <div class="pill_object" page="not_conditionals">
-    <a href="#" title="Running Code" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">3</span></a>
+  <div class="pill_object" page="while">
+    <a href="/posts/while" title="Loops and Infrared" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">3</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object" page="not_conditionals">

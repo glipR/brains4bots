@@ -1,5 +1,5 @@
 ---
-title: Reactive Code with Conditionals, and interfacing with sensors
+title: Sensors and Conditionals
 date: 2021-01-01 12:00:00 +1100
 math: true
 code: true
