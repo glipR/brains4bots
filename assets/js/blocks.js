@@ -197,11 +197,6 @@ window.onload = () => {
   // Handle opening post dialog
   var obj = document.getElementById("dialog_entry");
   if (obj) {
-    var imgs = obj.getElementsByTagName("img");
-    for (var i=0; i<imgs.length; i++) {
-      // lozad doesn't work with dynamic elements.
-      imgs[i].setAttribute("src", imgs[i].getAttribute("data-src"))
-    }
     if (dialog_tracker.shouldOpen(post))
       bootbox.dialog({
         message: obj.innerHTML,
@@ -218,6 +213,14 @@ window.onload = () => {
       });
     obj.parentElement.removeChild(obj);
   }
+
+  // Handle images.
+  var imgs = document.getElementsByTagName("img");
+    for (var i=0; i<imgs.length; i++) {
+      // lozad doesn't work with dynamic elements, so let's just not lazy load.
+      if (imgs[i].getAttribute("data-src") != null)
+        imgs[i].setAttribute("src", imgs[i].getAttribute("data-src"));
+    }
 };
 
 (function () {
