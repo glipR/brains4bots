@@ -15,7 +15,7 @@ You can complete everything on this site either using physical EV3 (Lego) robots
 There are a few reasons this site exists:
 
 * Most people will tell you that trying to learn programming with a project in mind makes it much easier to deal with, so why not integrate this aspect into the learning / teaching?
-* Programming has the ability to present problems with very physical/visual characteristics, making it infintely more engaging than a simple textual / logical problem. Why not leverage this in our teaching?
+* Programming has the ability to present problems with very physical/visual characteristics, making it infinitely more engaging than a simple textual / logical problem. Why not leverage this in our teaching?
 * I have yet to find a free resource for learning programming that fits the constraints outlined above, with the exception of a few somewhat specific resources: [Game Development with PICO-8](https://mboffin.itch.io/gamedev-with-pico-8-issue1) (Sidenote: PICO-8 is awesome).
 
 Therefore I've tried to create a set of free resources that fits these criteria (Of course if you have any suggestions / criticisms, please let me know by posting an [Issue or Pull Request](https://github.com/glipR/brains4bots/issues/new)).
@@ -29,10 +29,10 @@ I'd also like to thank two groups of people:
 * One massive thank you to all students who have been through Melbourne High School Robotics Club for being enthusiastic, forgiving, and smart test subjects 😜.
 
 ## How is this site?
-Solutions for the "Projects" are available here **TODO**.
+Solutions for the Projects / Puzzles are available here **TODO**.
 
 You can view the complete source code for this site [here](https://github.com/glipR/brains4bots).
 
 You can view the complete source code for the simulator program [here](https://github.com/MelbourneHighSchoolRobotics/ev3sim).
 
-You can view the complete source code for the "Projects" [here](https://github.com/MelbourneHighSchoolRobotics/ev3sim_custom_presets).
+You can view the complete source code for the Projects and Puzzles [here](https://github.com/MelbourneHighSchoolRobotics/ev3sim_custom_presets).
