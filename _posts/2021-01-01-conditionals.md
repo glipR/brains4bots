@@ -5,22 +5,18 @@ math: true
 code: true
 ---
 
-<!-- TODO: Move motors to the front of this page. Use them to motivate most puzzles. -->
-
 <div id="dialog_entry" markdown="1">
-By the end of this page, you will understand how code can make decisions, and use this to create a robot that can expertly work its way out of a maze, with a cryptic password to boot!
+By the end of this page, you will understand how code can make decisions, and use this to create a robot that can expertly work its way out of a maze, using sensors!
 
 <div markdown="1" style="text-align: center">
   ![test2](/assets/img/mazeTask.gif){: width="70%"}
 </div>
 </div>
 
-## Conditionals
-
 So far in our coding tasks our programs have really only been able to do a single task, no matter what input we provide to the program, such as move to a point or print some information.
-Coming back to the similarities with a recipe book, some recipes give different instructions dependant on initial conditions (If using the optional basil, add it to the soup now for best flavour). We have a similar tool in our toolbox when writing Python programs: **Conditionals**.
+Coming back to the similarities with a recipe book, some recipes give different instructions based on some information (If using the optional basil, add it to the soup now for best flavour). We have a similar tool in our toolbox when writing Python programs: **Conditionals**.
 
-### IF
+## IF
 
 <div class="code_container" markdown="1">
 
@@ -53,8 +49,8 @@ The example above showcases the first of these conditionals. The `if` keyword is
 
 While what `x < 10` does is rather obvious, Python can evaluate many other expressions, such as the following:
 
-* `x >= 10`: Greater than or equal to.
-* `x == 10`: Exactly equal to (Note the two `=`s, to differentiate this expression from setting variables (`x = 10`)).
+* `x >= 10`: Greater than or equal to (Written as `> =`).
+* `x == 10`: Exactly equal to (Note the two `=`s, to make this expression different from setting variables (`x = 10`)).
 * `x < "abc"`: If `x` is a string, then is true if `x` is [lexically smaller](https://www.wikiwand.com/en/Lexicographic_order#/Motivation_and_definition).
 * `0 < x <= 10`: x is larger than 0 but less than or equal to 10.
 
@@ -81,7 +77,91 @@ if under_10:
 
 <div class="continue"></div>
 
-### ELSE
+## Colour and Ultrasonic Sensors
+
+
+So far you've just been running different code based on input you supply. Let's make this a bit more interesting and instead use the values of robot sensors in our conditionals.
+
+<div style="width: 100%; overflow: auto;">
+<div style="width: 40%; margin-top: 32px; float: left;" markdown="1">
+Let's start by adding these sensors to your testing bot. You can do this by pressing the pencil icon on the bot menu, and selecting the device button (White square with red circle) from the left hand sidebar.
+</div>
+<div style="width: 60%; padding-left: 5%; padding-bottom: 32px; float: left; ">
+<video width="100%" controls>
+    <source src="/assets/video/devices.mp4">
+    Your browser does not support video playback.
+</video>
+</div>
+</div>
+
+Place a colour sensor, and set the port to `in1`, as well as an ultrasonic sensor, and set the port to `in2`.
+
+Now, as we did with the motors, we can integrate these devices into our programs.
+
+```python
+from ev3sim.code_helpers import wait_for_tick
+from ev3dev2.sensor import INPUT_1, INPUT_2
+from ev3dev2.sensor.lego import ColorSensor, UltrasonicSensor
+
+color = ColorSensor(INPUT_1)
+ultrasonic = UltrasonicSensor(INPUT_2)
+
+# Important!
+wait_for_tick()
+
+r, g, b = color.rgb
+dist = ultrasonic.distance_centimeters
+
+print(f"This colour sensor is reading Red:{r} Green:{g} Blue:{b}.")
+print(f"This ultrasonic sensor thinks we are {dist}cm apart.")
+```
+
+Just like motors, we import the code we need (`from ev3dev2...`), and then initialise each device to a variable (`ultrasonic = UltrasonicSensor(INPUT_2)`), which we can use to access it (`dist = ultrasonic.distance_centimeters`).
+
+Each of these sensors really only have one datapoint of use, as shown in the example above:
+
+* `color.rgb` gives 3 values, the red, green and blue components in the colour it currently sees. You can save these values to three different variables using commas, as the example code does.
+* `ultrasonic.distance_centimeters` gives a single value, the estimated distance to the nearest object, measured in centimetres.
+
+<div class="note" markdown="1" title="wait_for_tick" open="1">
+
+Notice that for this example, we also needed to import `wait_for_tick`, and call it on line 9.
+
+This is important. In the simulator, you should call `wait_for_tick` whenever you are about to start asking for sensor data. This ensures that sensor data is up to date. You'll see more examples of this in the future.
+
+</div>
+
+<div class="note" markdown="1" title="Colour RGB Space">
+
+One way computers encode colour is through RGB components. Your computer monitor is actually built up of many small red, green and blue lights, and colour is presented to your monitor by turning these three lights on to different amounts (For example, purple is equal parts red and blue).
+
+The values returned by `color.rgb` aim to be somewhere from 0-255 in value, where 255 represents completely on and 0 represents completely off (So purple might be something like `r=200`, `g=10`, `b=220`). You can visualise this colour blend quite easily using any online colour picker such as [this one](https://image-color.com/color-picker.html). As you might see on that page, there are many different ways colour can be represented in text, but RGB is probably the simplest and is often used.
+
+</div>
+
+<div class="puzzle" markdown="1" title="R G and B">
+
+Now that we can get values from these sensors, let's use them to predict the colour we are looking at!
+
+3 Colours (Red, Green, Blue) will flash onto the screen in a random order (They'll flip between these every 2 seconds). Using the colour sensor, you need to sense which of these 3 colours it is, and print it!
+
+You can access the puzzle [here](ev3simc://drive.google.com/uc?export=download&id=1ALhW0VEN9pZBsjmDiPMvyNZsNfbs4tL4). Edit the code to complete the task (You can use `time.sleep(2)` to wait for 2 seconds.)
+
+![Example gif](/assets/img/colour.gif)
+
+<div>
+
+<div class="hint" key="rgb" title="Hint" markdown="1">
+
+The colour is most likely red if the red value is larger than the green and blue values: `r > g + b`
+
+</div>
+
+</div>
+
+</div>
+
+## ELSE
 
 That's not the only tool we have however. Often you want to also do something if the expression is false:
 
@@ -114,13 +194,15 @@ Second run
 
 The rules for this keyword are very similar. After the first indented block, you can add the `else` keyword, the character `:`, and then another indented block. This block then only gets run when the first statement is not true (aka false!).
 
-### IF IF IF
+<div class="continue"></div>
+
+## IF IF IF
 
 Not only do we have these tools, but because the indented blocks are just blocks of code themselves, we can add more `if` statements in the blocks, and indent further to check multiple expressions:
 
 <div class="puzzle" markdown="1" title="Hidden Treasure">
 
-Part 1: Understand what the following code is doing:
+Part 1: Understand what the following code is doing, and then run it on your robot to confirm:
 
 ```python
 password = "open sesame"
@@ -143,82 +225,33 @@ Part 2: How would we change the code to allow for 3 attempts, rather than 2?
 
 </div>
 
-Here's another example of if blocks within if blocks, in case you need a bit more:
+<div class="puzzle" markdown="1" title="Pachinko">
 
-<div class="code_container" markdown="1">
+Jeremy is simulating a popular arcade game called Pachinko. You get different prizes based on the coloured slots that the ball falls into.
 
-```python
-# Give me a number
-x = int(input("Your number: "))
+Jeremy has written some code to automate this process and tell the user which prize they get, although currently it has 3 bugs that need fixing. Are you up for the task?
 
-if x < 10:
-    # Notice how I'm indented once.
-    print("That is a pretty small number")
-else:
-    if x > 20:
-        # This code is only executed when x < 10 is false, and x > 20 is true.
-        # Notice how I'm indented twice.
-        print("That is a large number")
-    else:
-        # This code is only executed when both expressions are false.
-        print("That is a respectably sized number")
-print(f"Your number was {x}.")
-```
+You can download the puzzle [here](ev3simc://drive.google.com/uc?export=download&id=1VMmze9H104zSZyNE8BuVTWnhWrYI_JPi).
 
-```text
-### Output ###
-First run
->>> Your number: 32
->>> That is a large number
->>> Your number was 32.
-Second run
->>> Your number: 20
->>> That is a respectably sized number
->>> Your number was 20.
-```
+![Example of puzzle being completed](/assets/img/pachinko.gif)
+
+<div>
+<div class="hint" key="pachinko-1" title="Hint 1">Try different slots and see when the output is incorrect. Run through the code yourself and spot what is going wrong.</div>
+<div class="hint" key="pachinko-2" title="Hint 2" markdown="1">
+
+The first problem is that any prize in slot 20 or more is being reported as a teensy prize. This is because the `print` for teensy is not in an `else`, so it is printed whenever `position <= 19` is `False`.
+
+</div>
+<div class="hint" key="pachinko-3" title="Hint 3">The last two bugs are to do with the left hand side of the board, in other words the top conditional. Are all the values in conditionals correct?</div>
+</div>
 
 </div>
 
 <div class="continue"></div>
 
-<div class="puzzle" markdown="1" title="Weatherman Forecast">
+## ELIF
 
-Jake, A rather lazy weatherman has to read out a welcome message at the start of every day depending on the celcius reading. This graphic explains the correct response to give:
-
-![Weatherman instructions](/assets/img/weatherman.png)
-
-All coloured sections include the number on the left and exclude the number on the right, so on a day with a reading of 18 degrees, Jake should say "Have a great day!"
-
-Jake has written the following program to help him remember the responses, but his code has 3 bugs. Please fix them.
-
-```python
-celsius = int(input("What is the celsius reading today: "))
-
-if celsius < 23:
-    if celsius > 7:
-        if celsius >= 19:
-            print("Have a great day!")
-        else:
-            print("Chances of rain, take an umbrella")
-    else:
-        print("Stay inside and rug up!")
-else:
-    if celsius < 32:
-        print("Remember to wear sunscreen when leaving!")
-    print("Stay cool and hydrated. Extreme fire danger.")
-```
-
-<div>
-<div class="hint" key="weather-1" title="Hint 1">Try entering the celsius for a few values and see when the output is incorrect. Then run through the code and see what is going wrong.</div>
-<div class="hint" key="weather-2" title="Hint 2">The code is wrong for 7, 18 and 26 celsius. Each of these are caused by a different bug.</div>
-<div class="hint" key="weather-3" title="Hint 3">The above celsius readings can be fixed by changing lines 4, 5 and 14 respectively (The last one requires you to make a new line, not just edit the old one).</div>
-</div>
-
-</div>
-
-### ELIF
-
-Moving our code to the right everytime we nest conditionals can be a bit annoying though. For this we have yet another tool:
+Moving our code to the right (indenting) everytime we nest conditionals can be a bit annoying though. For this we have yet another tool:
 
 <div class="code_container" markdown="1">
 
@@ -268,7 +301,7 @@ elif x == 32:
     # Only checks up to x < 10
     print("I get printed if x == 32")
 elif x == 32:
-    # Checks x < 10 and x==32, but if x==32, it was true earlier.
+    # If x==32, then the first `elif` is executed, not me :(
     print("I don't :(")
 ```
 
@@ -286,76 +319,33 @@ Second run
 
 </div>
 
-<div class="continue"></div>
+<div class="puzzle" markdown="1" title="Simpler code">
 
-## Sensors - Colour and Ultrasonic Sensors
-
-### How to sensors
-
-So far you've just been running different code based on input you supply. Let's make this a bit more interesting and instead use the values of robot sensors in our conditionals.
-
-<div style="width: 100%; overflow: auto;">
-<div style="width: 40%; margin-top: 32px; float: left;" markdown="1">
-Let's start by adding these sensors to your testing bot. You can do this by pressing the pencil icon on the bot menu, and selecting the device button (White square with red circle) from the left hand sidebar.
-</div>
-<div style="width: 60%; padding-left: 5%; padding-bottom: 32px; float: left; ">
-<video width="100%" controls>
-    <source src="/assets/video/devices.mp4">
-    Your browser does not support video playback.
-</video>
-</div>
-</div>
-
-Place a colour sensor, and set the port to `in1`, as well as an ultrasonic sensor, and set the port to `in2`.
-
-Now, as we did with the motors, we can integrate these devices into our programs.
-
-```python
-from ev3sim.code_helpers import wait_for_tick
-from ev3dev2.sensor import INPUT_1, INPUT_2
-from ev3dev2.sensor.lego import ColorSensor, UltrasonicSensor
-
-color = ColorSensor(INPUT_1)
-ultrasonic = UltrasonicSensor(INPUT_2)
-
-wait_for_tick()
-
-r, g, b = color.rgb
-dist = ultrasonic.distance_centimeters
-
-print(f"This colour sensor is reading Red:{r} Green:{g} Blue:{b}.")
-print(f"This ultrasonic sensor thinks we are {dist}cm apart.")
-```
-
-Just like motors, we import the code we need (`from ev3dev2...`), and then initialise each device to a variable (`ultrasonic = UltrasonicSensor(INPUT_2)`), which we can use to access it (`dist = ultrasonic.distance_centimeters`).
-
-Each of these sensors really only have one datapoint of use, as shown in the example above:
-
-* `color.rgb` gives 3 values, the red, green and blue components in the colour it currently sees. You can save these values to three different variables using commas, as the example code does.
-* `ultrasonic.distance_centimeters` gives a single value, the estimated distance to the nearest object, measured in centimetres.
-
-<div class="note" markdown="1" title="Colour RGB Space">
-
-One way computers encode colour is through RGB components. Your computer monitor is actually built up of many small red, green and blue lights, and colour is presented to your monitor by turning these three lights on to different amounts (For example, purple is equal parts red and blue).
-
-The values returned by `color.rgb` aim to be somewhere from 0-255 in value, where 255 represents completely on and 0 represents completely off (So purple might be something like `r=200`, `g=10`, `b=220`). You can visualise this colour blend quite easily using any online colour picker such as [this one](https://image-color.com/color-picker.html). As you might see on that page, there are many different ways colour can be represented in text, but RGB is probably the simplest and is often used.
+Rewrite the solution code you had for Pachinko so that no line is indented more than once (Use `elif`!)
 
 </div>
 
-<div class="puzzle" markdown="1" title="Eek! Too close!">
+<div class="puzzle" markdown="1" title="Social Distancing">
 
-Write a python script which will wait for 3 seconds, and then print one of two things:
+You are meeting a new alien race, and don't want to be to close or too far away, so you can have a conversation.
 
-* 'Eek! Too close!' If the robot is less than 15 cm away from an object (Use the ultrasonic sensor).
-* 'Thanks for respecting my personal space' otherwise.
+Using an ultrasonic sensor, and your motors, ensure you move to about 20 centimetres away from the alien.
 
-In order to wait for 3 seconds, you first need to `import time` at the top of your file, and then call `time.sleep(3)`.
+You can download the puzzle [here](ev3simc://drive.google.com/uc?export=download&id=1hRMoqcS978QvAjYhrfbu9kUX69Fox91n).
+
+![Example gif of puzzle being completed](/assets/img/social.gif)
+
+<div>
+
+<div class="hint" key="social" title="Hint">You can use the robot speed calculated in the previous project "Search and Destroy".</div>
+
+</div>
 
 </div>
 
 <div class="continue"></div>
 
-### AND OR NOT?
+## AND OR NOT?
 
 One last tool we can use in our toolbox are the terms `and`, `or` and `not`. These give us a way to combine or modify expressions to make code easier to read.
 
@@ -370,10 +360,10 @@ expression_2 = True
 # Long way
 if expression_1:
     if expression_2:
-        # I only get executed if both are true.
+        # I only get run if both are true.
         print("AND!")
 
-# Is equivalent to
+# Is the same as
 if expression_1 and expression_2:
     print("AND!")
 
@@ -386,10 +376,10 @@ if expression_1:
 if expression_2:
     correct = True
 if correct:
-    # I only get executed if either (or both) are true.
+    # I only get run if either (or both) are true.
     print("OR!")
 
-# Is equivalent to
+# Is the same as
 if expression_1 or expression_2:
     print("OR!")
 
@@ -401,7 +391,7 @@ if expression_1:
 else:
     print("NOT!")
 
-# Is equivalent to
+# Is the same as
 if not expression_1:
     print("NOT!")
 ```
@@ -418,9 +408,9 @@ if not expression_1:
 
 <div class="project" markdown="1" title="Coloured Padlock">
 
-You can download the checkpoint for this week [here](ev3simc://drive.google.com/uc?export=download&id=1zVbZbK0q-Ui9jhf_oXqe-DEuiBw-qAQM).
+You can download the project [here](ev3simc://drive.google.com/uc?export=download&id=1zVbZbK0q-Ui9jhf_oXqe-DEuiBw-qAQM).
 
-The custom task you downloaded should spawn a robot in the top left corner of a maze. The rules of the maze are simple, there are three coloured squares at the bottom of the maze, each of these squares has 3 corresponding buttons, although only one of them works. The location of the working button is dependant on the colour of the square, a blue square will have a working button just above, a green square will have the button slightly higher up, and a red square will have the button all the way to the top of the maze. All three buttons must be pushed (Your robot should go on top of them) for the exit at the bottom right of the maze to open up.
+The project you downloaded should spawn a robot in the top left corner of a maze. The rules of the maze are simple, there are three coloured squares at the bottom of the maze, each of these squares has 3 corresponding buttons, although only one of them works. The location of the working button is dependant on the colour of the square, a blue square will have a working button just above, a green square will have the button slightly higher up, and a red square will have the button all the way to the top of the maze. All three buttons must be pushed (Your robot should go on top of them) for the exit at the bottom right of the maze to open up.
 
 ![Example gif of the task being completed](/assets/img/padlockTask.gif)
 
@@ -428,11 +418,15 @@ To make the process a bit less tedious, here are some measurements of the field:
 
 ![Measurements](/assets/img/maze_proportions.png)
 
-Edit the contents of `code.py` to complete the task!
+Edit the code to complete the maze!
 
 <div>
 <div class="hint" key="project-1" title="Hint 1">Provided you calculated the robot speed in the previous lesson, you can reuse this with the measurements above.</div>
-<div class="hint" key="project-2" title="Hint 2">First try moving to the first coloured square, and printing its colour (red, green or blue). Use the color.rgb values to determine which colour it is. Do you get the colour values you expect? You might need to wait a bit before getting color.rbg by using time.sleep(0.1).</div>
+<div class="hint" key="project-2" title="Hint 2" markdown="1">
+
+First try moving to the first coloured square, and printing its colour (red, green or blue). Use the color.rgb values to determine which colour it is. Do you get the colour values you expect? You might need to wait a bit before getting color.rgb by using `time.sleep(0.1)`.
+
+</div>
 <div class="hint" key="project-3" title="Hint 3">Depending on the colour, all you want to alter is how high up the map you should move. The rest of the actions required (Move left then right to activate the button, move back down, and then shift over to the next colour) should be the same.</div>
 </div>
 
