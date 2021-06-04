@@ -137,6 +137,10 @@ html[mode="dark"] {
   color: var(--body-bg);
   text-align: right;
   margin-bottom: 5px;
+
+  span {
+    padding-right: 5px;
+  }
 }
 
 .coin_icon::before {
@@ -152,6 +156,7 @@ html[mode="dark"] {
 .coin_icon {
   float: left;
   color: var(--body-bg);
+  padding-left: 4px;
 }
 
 details.warning-block {
