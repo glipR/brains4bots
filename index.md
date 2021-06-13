@@ -30,8 +30,8 @@ Before we can start coding, we need to do a bit of setup and installation.
 Click the buttons below to get started!
 
 <div class="task_pill" style="width: max(50%, 200px)">
-  <div class="pill_object wip" page="setup">
-    <a href="/wip" title="Setup" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">1</span></a>
+  <div class="pill_object" page="setup">
+    <a href="/posts/setup" title="Setup" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">1</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object wip" page="wip">
@@ -44,16 +44,16 @@ Click the buttons below to get started!
 Provided you've read the above pages, we can start on these projects! This should take you through the very basics of programming, and the very basics of giving robots commands.
 
 <div class="task_pill" style="width: 90%; margin-left: 5%; margin-right: 5%;">
-  <div class="pill_object" page="basics">
-    <a href="/posts/basics" title="Basics of Python" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">1</span></a>
+  <div class="pill_object" page="intro">
+    <a href="/posts/intro" title="Basics of Python" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">1</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
-  <div class="pill_object" page="conditionals">
-    <a href="/posts/conditionals" title="Sensors and Conditionals" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">2</span></a>
+  <div class="pill_object" page="if-else">
+    <a href="/posts/if-else" title="Sensors and Conditionals" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">2</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
-  <div class="pill_object" page="while">
-    <a href="/posts/while" title="Loops and Infrared" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">3</span></a>
+  <div class="pill_object" page="repeat">
+    <a href="/posts/repeat" title="Loops and Infrared" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">3</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object wip" page="lists">
