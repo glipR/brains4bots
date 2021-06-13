@@ -29,23 +29,19 @@ Before we can start coding, we need to do a bit of setup and installation.
 
 Click the buttons below to get started!
 
-<div class="task_pill" style="width: max(60%, 300px)">
-  <div class="pill_object" page="conditionals">
-    <a href="#" title="Installing Python and VSCode" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">1</span></a>
+<div class="task_pill" style="width: max(50%, 200px)">
+  <div class="pill_object wip" page="setup">
+    <a href="/wip" title="Setup" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">1</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
-  <div class="pill_object" page="conditionals">
-    <a href="#" title="Installing EV3Sim" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">2</span></a>
-  </div>
-  <div style="border-left:1px solid #000;width:1px;"></div>
-  <div class="pill_object" page="not_conditionals">
-    <a href="#" title="Running Code" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">3</span></a>
+  <div class="pill_object wip" page="wip">
+    <a href="/wip" title="Using EV3 Robots" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">2</span></a>
   </div>
 </div>
 
 ## Let's do some coding!
 
-Provided you've read the above documents, we can start on these projects! This should take you through the very basics of programming, and the very basics of talking with robots.
+Provided you've read the above pages, we can start on these projects! This should take you through the very basics of programming, and the very basics of giving robots commands.
 
 <div class="task_pill" style="width: 90%; margin-left: 5%; margin-right: 5%;">
   <div class="pill_object" page="basics">
@@ -60,21 +56,35 @@ Provided you've read the above documents, we can start on these projects! This s
     <a href="/posts/while" title="Loops and Infrared" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">3</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
-  <div class="pill_object" page="not_conditionals">
-    <a href="#" title="Running Code" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">4</span></a>
+  <div class="pill_object wip" page="lists">
+    <a href="/wip" title="Lists and Compass" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">4</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
-  <div class="pill_object" page="not_conditionals">
-    <a href="#" title="Running Code" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">5</span></a>
-  </div>
-  <div style="border-left:1px solid #000;width:1px;"></div>
-  <div class="pill_object" page="not_conditionals">
-    <a href="#" title="Running Code" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">6</span></a>
+  <div class="pill_object wip" page="dictionaries">
+    <a href="/wip" title="Dictionaries" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">5</span></a>
   </div>
 </div>
 
 ## You want more?
 
-Harder puzzles and puzzles coming soon...
+Want to put your skills to the test, and learn some more advanced programming? Here's a collection of tougher puzzles, with some new concepts sprinkled in.
+
+<div class="task_pill" style="width: max(70%, 400px)">
+  <div class="pill_object wip" page="wip">
+    <a href="/wip" title="Coming Soon" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">1</span></a>
+  </div>
+  <div style="border-left:1px solid #000;width:1px;"></div>
+  <div class="pill_object wip" page="wip">
+    <a href="/wip" title="Coming Soon" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">2</span></a>
+  </div>
+  <div style="border-left:1px solid #000;width:1px;"></div>
+  <div class="pill_object wip" page="wip">
+    <a href="/wip" title="Coming Soon" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">3</span></a>
+  </div>
+  <div style="border-left:1px solid #000;width:1px;"></div>
+  <div class="pill_object wip" page="wip">
+    <a href="/wip" title="Coming Soon" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">4</span></a>
+  </div>
+</div>
 
 <script src="{{ '/assets/js/completion_pills.js' | relative_url }}"></script>

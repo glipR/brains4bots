@@ -85,6 +85,16 @@ html[mode="dark"] {
   background: var(--orange);
 }
 
+.wip {
+  background: repeating-linear-gradient(
+    45deg,
+    #FFA500,
+    #FFA500 10px,
+    transparent 10px,
+    transparent 20px
+  )!important;
+}
+
 .content-hidden {
   display: none;
 }
