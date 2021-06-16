@@ -35,7 +35,7 @@ Click the buttons below to get started!
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object wip" page="wip">
-    <a href="/wip" title="Using EV3 Robots" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">2</span></a>
+    <a href="/wip.html" title="Using EV3 Robots" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">2</span></a>
   </div>
 </div>
 
@@ -57,11 +57,11 @@ Provided you've read the above pages, we can start on these projects! This shoul
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object wip" page="lists">
-    <a href="/wip" title="Lists and Compass" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">4</span></a>
+    <a href="/wip.html" title="Lists and Compass" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">4</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object wip" page="dictionaries">
-    <a href="/wip" title="Dictionaries" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">5</span></a>
+    <a href="/wip.html" title="Dictionaries" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">5</span></a>
   </div>
 </div>
 
@@ -71,19 +71,19 @@ Want to put your skills to the test, and learn some more advanced programming? H
 
 <div class="task_pill" style="width: max(70%, 400px)">
   <div class="pill_object wip" page="wip">
-    <a href="/wip" title="Coming Soon" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">1</span></a>
+    <a href="/wip.html" title="Coming Soon" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">1</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object wip" page="wip">
-    <a href="/wip" title="Coming Soon" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">2</span></a>
+    <a href="/wip.html" title="Coming Soon" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">2</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object wip" page="wip">
-    <a href="/wip" title="Coming Soon" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">3</span></a>
+    <a href="/wip.html" title="Coming Soon" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">3</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object wip" page="wip">
-    <a href="/wip" title="Coming Soon" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">4</span></a>
+    <a href="/wip.html" title="Coming Soon" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">4</span></a>
   </div>
 </div>
 
