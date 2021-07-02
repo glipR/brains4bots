@@ -15,7 +15,7 @@ You'll learn to code robots to complete complex tasks, like navigate a maze. See
 You can complete these projects using physical EV3 (Lego) robots. These robots can be expensive though, so you can also do this free of charge using our simulator! You can see both methods below:
 
 <div markdown="1" style="width: calc(50% - 5px); display: inline-block; margin-right: 6px;">
-![](/assets/img/mazeTask.gif)
+![](/assets/img/padlockTask.gif)
 </div>
 <div markdown="1" style="width: calc(50% - 5px); display: inline-block;">
 TODO: Physical bot doing maze task.
