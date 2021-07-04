@@ -56,8 +56,8 @@ Provided you've read the above pages, we can start on these projects! This shoul
     <a href="/posts/repeat" title="Loops and Infrared" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">3</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
-  <div class="pill_object wip" page="lists">
-    <a href="/wip.html" title="Lists and Compass" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">4</span></a>
+  <div class="pill_object" page="lists">
+    <a href="/posts/lists" title="Lists and Compass" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">4</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object wip" page="dictionaries">
