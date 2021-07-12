@@ -61,7 +61,7 @@ Provided you've read the above pages, we can start on these projects! This shoul
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
   <div class="pill_object wip" page="dictionaries">
-    <a href="/wip.html" title="Dictionaries" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">5</span></a>
+    <a href="/wip.html" title="Dictionaries and Functions" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">5</span></a>
   </div>
 </div>
 
