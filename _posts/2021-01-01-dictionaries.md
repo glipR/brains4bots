@@ -8,6 +8,14 @@ actual_prev:
   url: /posts/lists
 ---
 
+<div id="dialog_entry" markdown="1">
+By the end of this page, you'll be able to distinguish colours much better, make a simple line follower, and you will have discovered two new powerful programming tools!
+
+<div markdown="1" style="text-align: center">
+  ![test2](/assets/img/coloured_directions.gif){: width="70%"}
+</div>
+</div>
+
 At this point, you've covered all of the sensors you can use in the simulator (and all of the sensors normally used in soccer and rescue competitions). Additionally, you have all the programming tools you need to write whatever program you desire. **However**, if you only use these sensors in their most basic functionality, and only use the programming tools we've shown so far, you'd be a very messy and limited programmer, and you wouldn't be getting the most out of your sensors.
 
 On this page, we'll start fixing both of these problems. You'll learn how to fully utilise the colour sensor, and some more programming tools to help with that.
@@ -75,9 +83,17 @@ Dictionaries are written with curly `{}` brackets rather than square `[]` ones. 
 
 The only extra thing to note is that `:` separates to 'word' from it's definition (Look at the first few lines of code above). As you can see it keeps a lot of the style of lists (accessing and changing elements with indexing using `[word]`).
 
-**TODO Rewrite this specific locations implementation to use a dictionary, also do your own**
+<div class="puzzle" title="Locations Fixing" markdown="1">
 
-## Accurate Colour Sensing, and using two Colour Sensors
+You can download the puzzle [here](ev3simc://drive.google.com/uc?export=download&id=1Nwcu56QkSfwCmKsIXsgMAoI2PV309IUW).
+
+You've been given a solution to the "Locations" puzzle from earlier. You need to change the solution so that it uses a dictionary for `commands`, rather than a list.
+
+If you'd like, you can do this with your own solution as well.
+
+</div>
+
+## Accurate Colour Sensing
 
 So far the most we've done with colour sensors is just to distinguish red, green and blue, which the colour sensor already does for us, for the most part. What if there are other colours we need our robot to figure out?
 
@@ -85,7 +101,27 @@ For now, let's just think about introducing one more colour, yellow. At the mome
 
 So how can we add some extra code to achieve this?
 
-**Task: Given that you know yellow should have big red/green, with no blue, try to change this rgb code so that it can spot the difference between blue, green, red, yellow.**
+<div class="puzzle" title="Colour Triple Yellow" markdown="1">
+
+You can download the puzzle [here](ev3simc://drive.google.com/uc?export=download&id=1GYVOEgaUoENDjRYKC8NCzDpWlLF3EhCj).
+
+Earlier on, we had a puzzle where 3 colours flashed up, and you had to print whether they were red, green or blue.
+Now, we are doing the same task, but adding yellow to the mix.
+
+![](/assets/img/colour_triple_yellow.gif)
+
+<div>
+
+<div class="hint" key="colour-triple-1" title="Hint 1" markdown="1">
+
+Notice that when looking at the variables `r`, `g` and `b`, yellow always has `r` and `g` rather big, and `b` rather small.
+Is there a condition we can write that will catch this?
+
+</div>
+
+</div>
+
+</div>
 
 <div class="continue"> </div>
 
@@ -158,19 +194,265 @@ If you're up for the challenge, try implementing this into your code in the next
 
 </div>
 
-**TODO: Looping over dictionaries of colours**
+### Looping over dictionaries
 
-**Task: Using a dictionary, write some code to pick which colour you are looking at (Task prints "First, pure white" ,"Sea Blue", (15, 75, 240)).**
-ev3simc://drive.google.com/uc?export=download&id=1yzezZt94uZNcR9CR0NijzHjAGQimGj7o
+So, we might be able to write a similar version of our code above to store a bunch of different colours in a dictionary, and then decide which of these colours is closest to what the colour sensor sees.
 
-/assets/img/dynamic_color.gif
+But in order to do this, we need some way to execute the code for every entry in the dictionary!
 
-**Note: HSL is more stable for these reasons. Think about how you could use it for colour sensing.**
+Luckily, since a dictionary is a collection of items, we can use a `for` loop:
+
+<div class="code_container" markdown="1">
+
+```python
+my_colours = {
+    "Red": [255, 0, 0],
+    "Green": [0, 255, 0],
+    "Blue": [0, 0, 255],
+}
+
+for key in my_colours:
+    print(key, "has rgb", my_colours[key])
+```
+
+```text
+### Output ###
+>>> Red has rgb [255, 0, 0]
+>>> Green has rgb [0, 255, 0]
+>>> Blue has rgb [0, 0, 255]
+```
+
+</div>
+
+<div class="puzzle" title="Dynamic Colours" markdown="1">
+
+You can download the puzzle [here](ev3simc://drive.google.com/uc?export=download&id=1yzezZt94uZNcR9CR0NijzHjAGQimGj7o)
+
+Now rather than sensing reds, greens and blues, you need to sense a range of different colours!
+
+Your robot will first be placed on a pure white square, and the message "This is what white looks like". Once you are ready to learn what colours you are looking for, print "Ready!".
+
+After this you'll be given some instructions through input, describing each of the colours. Then, the colour beneath your robot will change, and you need to print which of these colours you see.
+
+![Example gif of the puzzle being completed](/assets/img/dynamic_color.gif)
+
+</div>
+
+<div class="note" title="HSV Colour" open="1" markdown="1">
+
+This example is just one way to sense colours accurately, and there are problems that this simple approach has.
+
+For example, this relies heavily on good calibration and understanding what each colour looks like. If the green is slightly brighter than usual, it might be mistaken for white, purely from distance in RGB.
+
+A better solution might be to use the [HSV encoding](https://www.wikiwand.com/en/HSL_and_HSV#/Basic_principle) of colour, which `ev3dev2` [actually supports](https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/stable/sensors.html#ev3dev2.sensor.lego.ColorSensor.hsv). Although if you were to use HSV over RGB, rather than using the distance in HSV space, you might want to use the S and V values for a threshold, and only compute which colour based on Hue.
+
+</div>
 
 ## Functions
 
-**What are functions, where have we seen them?**
+### What are they?
 
-**Double sensor following**
+So far in our programming, we've seen a lot of different tools that used the `()` to get something done. Examples you've seen before include `print`, `input`, `on_for_seconds`, and many others. We've given them lots of different names throughout these pages (tools, things, methods, functions). And you might have been wondering how you can make your own.
 
-**Project: On/Off Line follower + State Machine with rules?**
+These things are called functions, and they let you package little parts of Python into their own self-contained bits, that you can reuse.
+For example, let's revisit how we calculated the colour differences before:
+
+```python
+r, g, b = color_sensor.rgb
+
+# What is the difference from 255, 255, 0?
+yellow_difference = abs(r - 255) + abs(g - 255) + abs(b - 0)
+# What is the difference from 255, 0, 0?
+red_difference = abs(r - 255) + abs(g - 0) + abs(b - 0)
+# What is the difference from 0, 255, 0?
+green_difference = abs(r - 0) + abs(g - 255) + abs(b - 0)
+# What is the difference from 0, 0, 255?
+blue_difference = abs(r - 0) + abs(g - 0) + abs(b - 255)
+```
+
+Notice how a lot of the code is very similar, it is just that the constant 0 and 255 that are changing.
+Rather than having all of this repeated and hard to read code, we can use functions!
+
+```python
+def colour_difference(colour1, colour2):
+    return abs(colour1[0] - colour2[0]) + abs(colour1[1] - colour2[1]) + abs(colour1[2] - colour2[2])
+
+r, g, b = color_sensor.rgb
+
+yellow_difference = colour_difference([r, g, b], [255, 255, 0])
+red_difference = colour_difference([r, g, b], [255, 0, 0])
+green_difference = colour_difference([r, g, b], [0, 255, 0])
+blue_difference = colour_difference([r, g, b], [0, 0, 255])
+```
+
+A function always starts with the `def` keyword, followed by the name of the function (`colour_difference`). After that, you've got those round `()` brackets, which contain the `arguments` of a function. `arguments` are like variables that you can change before running the function (So `colour1` gets set to `[r, g, b]` and `colour2` gets set to `[255, 255, 0]` for `yellow_difference`).
+
+Then, indented just like we've seen before, is the code the function contains. Now whenever we write this function name, running the function is the same as running the code inside.
+
+The last thing a function does is `return`. Whatever is `return`ed from a function then becomes the value wherever the function is written, so `yellow_difference` becomes `abs(colour1[0] - colour2[0]) + abs(colour1[1] - colour2[1]) + abs(colour1[2] - colour2[2])`, where `colour1=(r, g, b)` and `colour2=(255, 255, 0)`.
+
+<div class="puzzle" title="Customer Service" markdown="1">
+
+You can download the puzzle [here](ev3simc://drive.google.com/uc?export=download&id=1IJ_vYMGUtRTS4m_lqYlKywgptOHcGpC7)
+
+Joseph is writing a bot to handle many different customer service requests.
+In this environment, users are allocated to plans, and these plans can change.
+
+Joseph already has most of the code written, but there are a few bugs in his code, which means that some actions aren't correctly completed. Can you help him?
+
+![](/assets/img/customer.gif)
+
+<div>
+
+<div class="hint" key="customer-1" title="Hint 1" markdown="1">
+
+There is one problem with `create_user`, one problem with `set_user_plan`, and one problem somewhere in the `while True` block.
+
+</div>
+
+<div class="hint" key="customer-2" title="Hint 2" markdown="1">
+
+* The `create_user` bug causes a user's `plan` entry to be incorrect.
+* The `set_user_plan` bug causes a plan list to contain less user ids than it should.
+* The `while True` bug causes an error with reading the messages.
+
+</div>
+
+</div>
+
+</div>
+
+
+### But why?
+
+Functions at first might seem a bit useless, but as your programs grow longer and longer you'll grow to love them.
+They allow you to separate little bits of your program into tidy packages, that can then be used all over your robot.
+
+Additionally, it makes you give a name to a portion of code, which can make it much easier to understand.
+
+The type of function seen on the motors, like `my_motor.on_for_seconds`, is a bit different, and will be talked about in some of the gauntlet pages.
+
+### Double sensor line following
+
+Let's apply our newfound knowledge of functions, along with powerful new colour sensing capabilities, to write a super strong line follower!
+
+Using functions, we can break this task up a bit. Rather than dealing with everything at once, lets look at our code from the top-level. We want to create a few functions that can deal with the details for us. Look at the following code:
+
+```python
+# Motor/Colour connection stuff
+lmotor = ...
+rmotor = ...
+lsensor = ...
+rsensor = ...
+
+def get_error(left_sensor, right_sensor):
+    # Error tells us how far away we are from the line.
+    # -1 = we are to the left of the line
+    # 1 = we are to the right of the line
+    # anywhere inbetween spans from right to left - so 0.1 means we are just right of the line.
+    ...
+
+def move_based_on_error(left_motor, right_motor, error_value):
+    # Based on the error value, what should the motors do?
+    ...
+
+while True:
+    error = get_error(lsensor, rsensor)
+    move_based_on_error(lmotor, rmotor, error)
+    wait_for_tick()
+```
+
+In this example, we'd have two colour sensors, preferably on either side of the line, and two motors, in a similar configuration.
+
+Although just a basic start, this code helps you think about the program in two parts - First we need to use the colour sensors to decide where we are on the line, and next we need to use the motors to move towards the line in a reasonable way.
+
+<div class="puzzle" title="Error values" markdown="1">
+
+Let's try implementing the first function, `get_error`!
+
+Start by thinking about how we can use our previous code on distances between colours to our advantage.
+
+Once you've got your code, test it out on the rescue simulator, or an a real rescue tile.
+
+<div>
+
+<div class="hint" key="error-1" title="Hint 1" markdown="1">
+
+Try drawing a few pictures of different positions your robot could be in, and what you'd want the error to be. Additionally, think about how distance the left and right colour sensors would be from reading all black, or all white. For example, like the picture below:
+
+![](/assets/img/follow_hint.png)
+
+</div>
+
+<div class="hint" key="error-2" title="Hint 2" markdown="1">
+
+Assuming that the ground is pure white, with a black line, a colour sensor is closer to the line the closer the perceived colour is to black. If the left colour is closer to black than the right colour, then error should be positive. If the left colour is further from black than the right colour, then error should be negative...
+
+</div>
+
+</div>
+
+</div>
+
+<div class="puzzle" title="Moving Motors" markdown="1">
+
+Now for the second function, how should we move the motors based on this error?
+
+Try to make this good enough to traverse the first few rescue tiles!
+
+<div>
+
+<div class="hint" key="motors-1" title="Hint" markdown="1">
+
+Just moving to the left when error is positive and moving to the right when error is negative should do pretty well, with some tweaking.
+
+If you want to follow the line smoothly, you could start turning more heavily when the error is particularly large. How could you achieve this?
+
+</div>
+
+</div>
+
+</div>
+
+### Project time
+
+<div class="project" title="Coloured Directions" markdown="1">
+
+You can download the project [here](ev3simc://drive.google.com/uc?export=download&id=1oX_Hy9lJMM2iv98a31J54zTYdP-XWwUG).
+
+This project is broken up into small parts.
+
+**Part 1**: Write a function, `rotate_to(d)` which will rotate your bot `d` degrees counterclockwise. Test this on the bot provided in the project. (Use the Location Puzzle solution if you want)
+
+**Part 2**: Write a function `get_color()`, that will return the correct colour of a square, provided you already have calibrated for white, and have a dictionary of colour keys, with r, g, b values. (Use the Dynamic Colours Puzzle solution if you want)
+
+**Part 3**: Using the previous function, write a program which does the following:
+
+* Reads in a set of colour definitions and rules ("Blue is 0, 0, 255 and means you must move NWWNW")
+* Repeatedly:
+    * Sense the colour below you
+    * Match it to one of the colour definitions you've been given (Blue)
+    * Follow the appropriate rules (We must move North, West, West, North, West)
+* When the colour sensed is pure black, stop.
+
+The first colour you are on will always be pure white.
+
+<div>
+
+<div class="hint" key="project" title="Hint" markdown="1">
+
+This is just a slightly more complicated version of the colour sensing puzzle you did earlier.
+
+* Sense the colour with `get_color`.
+* Get the correct movement string, based on this colour (NWWNW).
+* Use a dictionary, or `if` statements, to turn each of these into a compass bearing.
+* Rotate to this compass bearing with `rotate_to`.
+* Move forward.
+
+</div>
+
+</div>
+
+![](/assets/img/coloured_directions.gif)
+
+</div>
