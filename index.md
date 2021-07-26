@@ -60,8 +60,8 @@ Provided you've read the above pages, we can start on these projects! This shoul
     <a href="/posts/lists" title="Lists and Compass" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">4</span></a>
   </div>
   <div style="border-left:1px solid #000;width:1px;"></div>
-  <div class="pill_object wip" page="dictionaries">
-    <a href="/wip.html" title="Dictionaries and Functions" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">5</span></a>
+  <div class="pill_object" page="dictionaries">
+    <a href="/posts/dictionaries" title="Dictionaries and Functions" data-toggle="tooltip" data-placement="top"><span class="pillbox_number">5</span></a>
   </div>
 </div>
 

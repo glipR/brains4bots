@@ -236,6 +236,31 @@ After this, you'll be given some instructions through input, describing each of 
 
 ![Example gif of the puzzle being completed](/assets/img/dynamic_color.gif)
 
+<div>
+
+<div class="hint" key="dynamic-1" title="Hint 1" markdown="1">
+
+First, focus on parsing all of the input and placing the information in a dictionary. So the end result might look like:
+
+```python
+colours = {
+    "Aqua": [20, 10, 255],
+    "White": [255, 255, 255]
+}
+```
+
+But rather than writing these values out, you are creating this dictionary based on `input`.
+
+</div>
+
+<div class="hint" key="dynamic-2" title="Hint 2" markdown="1">
+
+Look at the suggested solution for sensing with yellow in the note above. Can we generalise this to use our dictionary?
+
+</div>
+
+</div>
+
 </div>
 
 <div class="note" title="HSV Colour" open="1" markdown="1">
@@ -290,6 +315,8 @@ A function always starts with the `def` keyword, followed by the name of the fun
 Then, indented just like we've seen before is the code the function contains. Now, whenever we write this function name, running the function is the same as running the code inside.
 
 The last thing a function does is `return`. Whatever is `return`ed from a function then becomes the value wherever the function is written, so `yellow_difference` becomes `abs(colour1[0] - colour2[0]) + abs(colour1[1] - colour2[1]) + abs(colour1[2] - colour2[2])`, where `colour1=[r, g, b]` and `colour2=[255, 255, 0]`.
+
+<div class="continue"> </div>
 
 <div class="puzzle" title="Customer Service" markdown="1">
 
@@ -355,6 +382,10 @@ This project is broken up into small parts.
 
 The first colour you are on will always be pure white.
 
+![Example of the Project being Completed](/assets/img/coloured_directions.gif)
+
+<font size="2">The gif above is sped up</font>
+
 <div>
 
 <div class="hint" key="project" title="Hint" markdown="1">
@@ -370,7 +401,5 @@ This is just a slightly more complicated version of the colour sensing puzzle yo
 </div>
 
 </div>
-
-![](/assets/img/coloured_directions.gif)
 
 </div>
