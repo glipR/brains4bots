@@ -16,13 +16,13 @@ By the end of this page, you'll be able to distinguish colours much better, and 
 </div>
 </div>
 
-At this point, you've covered all of the sensors you can use in the simulator (and all of the sensors normally used in soccer and rescue competitions). Additionally, you have all the programming tools you need to write whatever program you desire. **However**, if you only use these sensors in their most basic functionality, and only use the programming tools we've shown so far, you'd be a very messy and limited programmer, and you wouldn't be getting the most out of your sensors.
+At this point, you've covered all of the sensors you can use in the simulator (and all of the sensors generally used in soccer and rescue competitions). Additionally, you have all the programming tools you need to write whatever program you desire. **However**, if you only use these sensors in their most basic functionality and only use the programming tools we've shown so far, you'd be a very messy and limited programmer, and you wouldn't be getting the most out of your sensors.
 
-On this page, we'll start fixing both of these problems. You'll learn how to fully utilise the colour sensor, and some more programming tools to help with that.
+On this page, we'll start fixing both of these problems. You'll learn how to fully utilise the colour sensor and some more programming tools to help with that.
 
 ## Dictionaries
 
-On the last page, with lists, remember that in some puzzles, we needed to search through the list to find a particular item. For example, in the Locations puzzle:
+On the last page, with lists, remember that we needed to search through the list to find a particular item in some puzzles. For example, in the Locations puzzle:
 
 <div class="code_container" markdown="1">
 
@@ -53,7 +53,7 @@ for location in my_locations:
 
 </div>
 
-This is our first indicator that lists aren't the only ways we should be storing collections of items. We need a different collection that allows us to (just like variables) give names to data, and retrieve data based on that name (So we can store data for `Hotel`, and retrieve data for `Hotel`).
+This is our first indicator that lists aren't the only ways we should be storing collections of items. We need a different collection that allows us to (just like variables) give names to data, and retrieve data based on that name (So we can store data for `Hotel` and retrieve data for `Hotel`).
 
 Once again, Python saves the day! In comes the dictionary:
 
@@ -79,9 +79,9 @@ print("Distance is", my_locations["Hotel"][0], "and bearing is", my_locations["H
 
 </div>
 
-Dictionaries are written with curly `{}` brackets rather than square `[]` ones. Just like a real dictionary, where you can lookup a word to find it's meaning, you can look up a word in a Python dictionary to find the linked item. So in a real life dictionary, if you looked up the word `Hotel`, you would find the definition of `Hotel` is `[42, 84]`.
+Dictionaries are written with curly `{}` brackets rather than square `[]` ones. Like a real dictionary, you can look up a word to find its meaning. In Python terms,  you can supply a key to a dictionary to find the linked item. So in a real-life dictionary, if you looked up the word `Hotel`, you would find the definition of `Hotel` is `[42, 84]`.
 
-The only extra thing to note is that `:` separates the 'word' from it's definition (Look at the first few lines of code above). As you can see it keeps a lot of the style of lists (accessing and changing elements with indexing using `[word]`).
+The only extra thing to note is that `:` separates the 'word' from its definition (Look at the first few lines of code above). As you can see, it keeps a lot of the style of lists (accessing and changing elements with indexing using `[word]`).
 
 <div class="puzzle" title="Locations Fixing" markdown="1">
 
@@ -95,9 +95,9 @@ If you'd like, you can do this with your own solution as well.
 
 ## Accurate Colour Sensing
 
-So far the most we've done with colour sensors is just to distinguish red, green and blue, which the colour sensor already does for us, for the most part. What if there are other colours we need our robot to figure out?
+So far, the most we've done with colour sensors is just to distinguish red, green and blue, which the colour sensor already does for us, for the most part. What if there are other colours we need our robot to figure out?
 
-For now, let's just think about introducing one more colour, yellow. At the moment, depending on how you've written your colour sensing code, your robot might think yellow is red, green or none of the three colours (but hopefully not blue!). This is because, using that Red, Green, Blue composition that the colour sensor uses, Yellow is 255 for red, 255 for green, and 0 for blue (aroundabout, obviously pure yellow in real life is hard to come by, and the colour sensors will be slightly off).
+For now, let's just think about introducing one more colour, yellow. Depending on how you've written your current colour sensing code, your robot might think yellow is red, green, or none of the three colours (but hopefully not blue!). This is because, using that Red, Green, Blue composition that the colour sensor uses, yellow is 255 for red, 255 for green, and 0 for blue (around about, obviously pure yellow in real life is hard to come by, and the colour sensors will be slightly off).
 
 So how can we add some extra code to achieve this?
 
@@ -149,8 +149,8 @@ else:
 
 One possible solution for sensing yellow is the code in the note above, have a quick read and understand what it does.
 
-So for yellow, we have code that checks that the red and green components are large, and the blue component is small.
-For red, we have code that checks that the red component is large, and the green and blue components are small.
+So for yellow, we have code that checks that the red and green components are large and the blue component is small.
+For red, we have code that checks that the red component is large and the green and blue components are small.
 
 In general, we can try doing a similar thing for lots of colours: The colour we are looking at is similar to some specific colour (like red, green, blue, yellow) if the r, g, b components are similar:
 
@@ -182,7 +182,7 @@ elif blue_difference == min_difference:
 
 <div class="note" title="" markdown="1" title="No color">
 
-You might notice that in the last script above, there is no `else`, and so we never print `I have no idea!`.
+You might notice that there is no `else` in the last script above, so we never print `I have no idea!`.
 This is because `min_difference` is always one of `yellow_difference`, `red_difference`, and so on.
 
 If we did want to have a case where we print `I have no idea!`, you'd have to add another check beforehand, something like:
@@ -196,9 +196,9 @@ If you're up for the challenge, try implementing this into your code in the next
 
 ### Looping over dictionaries
 
-So, we might be able to write a similar version of our code above to store a bunch of different colours in a dictionary, and then decide which of these colours is closest to what the colour sensor sees.
+So, we might write a similar version of our code above to store many different colours in a dictionary and then decide which of these colours is closest to what the colour sensor sees.
 
-But in order to do this, we need some way to execute the code for every entry in the dictionary!
+But to do this, we need some way to execute the code for every entry in the dictionary!
 
 Luckily, since a dictionary is a collection of items, we can use a `for` loop:
 
@@ -228,11 +228,11 @@ for key in my_colours:
 
 You can download the puzzle [here](ev3simc://drive.google.com/uc?export=download&id=1yzezZt94uZNcR9CR0NijzHjAGQimGj7o)
 
-Now rather than sensing reds, greens and blues, you need to sense a range of different colours!
+Now, rather than sensing reds, greens and blues, you need to sense a range of different colours!
 
 Your robot will first be placed on a pure white square, and the message "This is what white looks like" gets printed. Once you are ready to learn what colours you are looking for, print "Ready!".
 
-After this you'll be given some instructions through input, describing each of the colours. Then, the colour beneath your robot will change, and you need to print which of these colours you see.
+After this, you'll be given some instructions through input, describing each of the colours. Then, the colour beneath your robot will change, and you need to print which of these colours you see.
 
 ![Example gif of the puzzle being completed](/assets/img/dynamic_color.gif)
 
@@ -242,9 +242,9 @@ After this you'll be given some instructions through input, describing each of t
 
 This example is just one way to sense colours accurately, and there are problems that this simple approach has.
 
-For example, this relies heavily on good calibration and understanding what each colour looks like. If the green is slightly brighter than usual, it might be mistaken for white, purely from distance in RGB.
+For example, this relies heavily on good calibration and understanding what each colour looks like. If the green is slightly brighter than usual, it might be mistaken for white, purely from the distance in RGB.
 
-A better solution might be to use the [HSV encoding](https://www.wikiwand.com/en/HSL_and_HSV#/Basic_principle) of colour, which `ev3dev2` [actually supports](https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/stable/sensors.html#ev3dev2.sensor.lego.ColorSensor.hsv). Although if you were to use HSV over RGB, rather than using the distance in HSV space, you might want to use the S and V values for a threshold, and only compute which colour based on Hue.
+A better solution might be to use the [HSV encoding](https://www.wikiwand.com/en/HSL_and_HSV#/Basic_principle) of colour, which `ev3dev2` [actually supports](https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/stable/sensors.html#ev3dev2.sensor.lego.ColorSensor.hsv). Although if you were to use HSV over RGB, rather than using the distance in HSV space, you might want to use the S and V values for a threshold and only compute which colour based on Hue.
 
 </div>
 
@@ -252,9 +252,9 @@ A better solution might be to use the [HSV encoding](https://www.wikiwand.com/en
 
 ### What are they?
 
-So far in our programming, we've seen a lot of different tools that used the `()` to get something done. Examples you've seen before include `print`, `input`, `on_for_seconds`, and many others. We've given them lots of different names throughout these pages (tools, things, methods, functions). And you might have been wondering how you can make your own.
+So far in our programming, we've seen many different tools that used the `()` to get something done. Examples you've seen before include `print`, `input`, `on_for_seconds`, and many others. We've given them many different names throughout these pages (tools, things, methods, functions). And you might have been wondering how you can make your own.
 
-These things are called functions, and they let you package little parts of Python into their own self-contained bits, that you can reuse.
+These things are called functions, and they let you package little snippets of Python into their own self-contained bits that you can reuse.
 For example, let's revisit how we calculated the colour differences before:
 
 ```python
@@ -285,9 +285,9 @@ green_difference = colour_difference([r, g, b], [0, 255, 0])
 blue_difference = colour_difference([r, g, b], [0, 0, 255])
 ```
 
-A function always starts with the `def` keyword, followed by the name of the function (`colour_difference`). After that, you've got those round `()` brackets, which contain the `arguments` of a function. `arguments` are like variables that you can change before running the function (So `colour1` gets set to `[r, g, b]` and `colour2` gets set to `[255, 255, 0]` for `yellow_difference`).
+A function always starts with the `def` keyword, followed by the name of the function (`colour_difference`). After that, you've got round `()` brackets, which contain `arguments` of a function. `arguments` are like variables that you can change before running the function (So `colour1` gets set to `[r, g, b]` and `colour2` gets set to `[255, 255, 0]` for `yellow_difference`).
 
-Then, indented just like we've seen before, is the code the function contains. Now whenever we write this function name, running the function is the same as running the code inside.
+Then, indented just like we've seen before is the code the function contains. Now, whenever we write this function name, running the function is the same as running the code inside.
 
 The last thing a function does is `return`. Whatever is `return`ed from a function then becomes the value wherever the function is written, so `yellow_difference` becomes `abs(colour1[0] - colour2[0]) + abs(colour1[1] - colour2[1]) + abs(colour1[2] - colour2[2])`, where `colour1=[r, g, b]` and `colour2=[255, 255, 0]`.
 
@@ -325,12 +325,12 @@ There is one problem with `create_user`, one problem with `set_user_plan`, and o
 
 ### But why?
 
-Functions at first might seem a bit useless, but as your programs grow longer and longer you'll grow to love them.
-They allow you to separate little bits of your program into tidy packages, that can then be used all over your robot.
+Functions at first might seem a bit useless, but as your programs grow longer and longer, you'll grow to love them.
+They allow you to separate little bits of your program into tidy packages that can then be used all over your robot.
 
-Additionally, it makes you give a name to a portion of code, which can make it much easier to understand.
+Additionally, it makes you give a name to a portion of the code, making it much easier to understand.
 
-The type of function seen on the motors, like `my_motor.on_for_seconds`, is a bit different, and will be talked about in some of the gauntlet pages.
+The type of function seen on the motors, like `my_motor.on_for_seconds`, is slightly different and will be discussed in some of the gauntlet pages.
 
 ### Project time
 
