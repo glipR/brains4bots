@@ -48,6 +48,9 @@ html[mode="dark"] {
   .modal-footer {
     border-top-color: var(--search-tag-bg);
   }
+  .pillbox_number {
+    background: #c2c6cc;
+  }
 }
 
 .task_pill {
@@ -66,7 +69,7 @@ html[mode="dark"] {
 }
 
 .pillbox_number {
-  background: var(--search-icon-color);
+  background: #c2c6cc;
   border-width: 0px;
   display: inline-block;
   width: 28px;
