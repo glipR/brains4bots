@@ -9,7 +9,7 @@ actual_prev:
 ---
 
 <div id="dialog_entry" markdown="1">
-By the end of this page, you'll be able to distinguish colours much better, make a simple line follower, and you will have discovered two new powerful programming tools!
+By the end of this page, you'll be able to distinguish colours much better, and you will have discovered two powerful programming tools!
 
 <div markdown="1" style="text-align: center">
   ![test2](/assets/img/coloured_directions.gif){: width="70%"}
@@ -22,7 +22,7 @@ On this page, we'll start fixing both of these problems. You'll learn how to ful
 
 ## Dictionaries
 
-In the last lesson, with lists, remember that in some puzzles, we needed to search through the list to find a particular item. For example, in the Locations puzzle:
+On the last page, with lists, remember that in some puzzles, we needed to search through the list to find a particular item. For example, in the Locations puzzle:
 
 <div class="code_container" markdown="1">
 
@@ -81,7 +81,7 @@ print("Distance is", my_locations["Hotel"][0], "and bearing is", my_locations["H
 
 Dictionaries are written with curly `{}` brackets rather than square `[]` ones. Just like a real dictionary, where you can lookup a word to find it's meaning, you can look up a word in a Python dictionary to find the linked item. So in a real life dictionary, if you looked up the word `Hotel`, you would find the definition of `Hotel` is `[42, 84]`.
 
-The only extra thing to note is that `:` separates to 'word' from it's definition (Look at the first few lines of code above). As you can see it keeps a lot of the style of lists (accessing and changing elements with indexing using `[word]`).
+The only extra thing to note is that `:` separates the 'word' from it's definition (Look at the first few lines of code above). As you can see it keeps a lot of the style of lists (accessing and changing elements with indexing using `[word]`).
 
 <div class="puzzle" title="Locations Fixing" markdown="1">
 
@@ -152,7 +152,7 @@ One possible solution for sensing yellow is the code in the note above, have a q
 So for yellow, we have code that checks that the red and green components are large, and the blue component is small.
 For red, we have code that checks that the red component is large, and the green and blue components are small.
 
-In general, we can try doing a similar think for lots of colours: The colour we are looking at is similar to some specific colour (like red, green, blue, yellow) if the r, g, b components are similar.
+In general, we can try doing a similar thing for lots of colours: The colour we are looking at is similar to some specific colour (like red, green, blue, yellow) if the r, g, b components are similar:
 
 ```python
 r, g, b = color_sensor.rgb
@@ -230,7 +230,7 @@ You can download the puzzle [here](ev3simc://drive.google.com/uc?export=download
 
 Now rather than sensing reds, greens and blues, you need to sense a range of different colours!
 
-Your robot will first be placed on a pure white square, and the message "This is what white looks like". Once you are ready to learn what colours you are looking for, print "Ready!".
+Your robot will first be placed on a pure white square, and the message "This is what white looks like" gets printed. Once you are ready to learn what colours you are looking for, print "Ready!".
 
 After this you'll be given some instructions through input, describing each of the colours. Then, the colour beneath your robot will change, and you need to print which of these colours you see.
 
@@ -289,7 +289,7 @@ A function always starts with the `def` keyword, followed by the name of the fun
 
 Then, indented just like we've seen before, is the code the function contains. Now whenever we write this function name, running the function is the same as running the code inside.
 
-The last thing a function does is `return`. Whatever is `return`ed from a function then becomes the value wherever the function is written, so `yellow_difference` becomes `abs(colour1[0] - colour2[0]) + abs(colour1[1] - colour2[1]) + abs(colour1[2] - colour2[2])`, where `colour1=(r, g, b)` and `colour2=(255, 255, 0)`.
+The last thing a function does is `return`. Whatever is `return`ed from a function then becomes the value wherever the function is written, so `yellow_difference` becomes `abs(colour1[0] - colour2[0]) + abs(colour1[1] - colour2[1]) + abs(colour1[2] - colour2[2])`, where `colour1=[r, g, b]` and `colour2=[255, 255, 0]`.
 
 <div class="puzzle" title="Customer Service" markdown="1">
 
@@ -331,88 +331,6 @@ They allow you to separate little bits of your program into tidy packages, that 
 Additionally, it makes you give a name to a portion of code, which can make it much easier to understand.
 
 The type of function seen on the motors, like `my_motor.on_for_seconds`, is a bit different, and will be talked about in some of the gauntlet pages.
-
-### Double sensor line following
-
-Let's apply our newfound knowledge of functions, along with powerful new colour sensing capabilities, to write a super strong line follower!
-
-Using functions, we can break this task up a bit. Rather than dealing with everything at once, lets look at our code from the top-level. We want to create a few functions that can deal with the details for us. Look at the following code:
-
-```python
-# Motor/Colour connection stuff
-lmotor = ...
-rmotor = ...
-lsensor = ...
-rsensor = ...
-
-def get_error(left_sensor, right_sensor):
-    # Error tells us how far away we are from the line.
-    # -1 = we are to the left of the line
-    # 1 = we are to the right of the line
-    # anywhere inbetween spans from right to left - so 0.1 means we are just right of the line.
-    ...
-
-def move_based_on_error(left_motor, right_motor, error_value):
-    # Based on the error value, what should the motors do?
-    ...
-
-while True:
-    error = get_error(lsensor, rsensor)
-    move_based_on_error(lmotor, rmotor, error)
-    wait_for_tick()
-```
-
-In this example, we'd have two colour sensors, preferably on either side of the line, and two motors, in a similar configuration.
-
-Although just a basic start, this code helps you think about the program in two parts - First we need to use the colour sensors to decide where we are on the line, and next we need to use the motors to move towards the line in a reasonable way.
-
-<div class="puzzle" title="Error values" markdown="1">
-
-Let's try implementing the first function, `get_error`!
-
-Start by thinking about how we can use our previous code on distances between colours to our advantage.
-
-Once you've got your code, test it out on the rescue simulator, or an a real rescue tile.
-
-<div>
-
-<div class="hint" key="error-1" title="Hint 1" markdown="1">
-
-Try drawing a few pictures of different positions your robot could be in, and what you'd want the error to be. Additionally, think about how distance the left and right colour sensors would be from reading all black, or all white. For example, like the picture below:
-
-![](/assets/img/follow_hint.png)
-
-</div>
-
-<div class="hint" key="error-2" title="Hint 2" markdown="1">
-
-Assuming that the ground is pure white, with a black line, a colour sensor is closer to the line the closer the perceived colour is to black. If the left colour is closer to black than the right colour, then error should be positive. If the left colour is further from black than the right colour, then error should be negative...
-
-</div>
-
-</div>
-
-</div>
-
-<div class="puzzle" title="Moving Motors" markdown="1">
-
-Now for the second function, how should we move the motors based on this error?
-
-Try to make this good enough to traverse the first few rescue tiles!
-
-<div>
-
-<div class="hint" key="motors-1" title="Hint" markdown="1">
-
-Just moving to the left when error is positive and moving to the right when error is negative should do pretty well, with some tweaking.
-
-If you want to follow the line smoothly, you could start turning more heavily when the error is particularly large. How could you achieve this?
-
-</div>
-
-</div>
-
-</div>
 
 ### Project time
 
