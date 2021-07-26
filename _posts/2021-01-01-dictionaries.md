@@ -8,6 +8,8 @@ actual_prev:
   url: /posts/lists
 ---
 
+<!-- GRAMMAR CHECK DONE -->
+
 <div id="dialog_entry" markdown="1">
 By the end of this page, you'll be able to distinguish colours much better, and you will have discovered two powerful programming tools!
 
