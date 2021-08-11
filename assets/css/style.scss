@@ -51,6 +51,16 @@ html[mode="dark"] {
   .pillbox_number {
     background: #c2c6cc;
   }
+  .popover-body {
+    background: var(--topbar-wrapper-bg);
+    color: var(--text-color);
+  }
+  .bs-popover-top {
+    background: var(--topbar-wrapper-bg);
+  }
+  .bs-popover-top .arrow::after {
+    border-top-color: var(--topbar-wrapper-bg);
+  }
 }
 
 .task_pill {
@@ -327,4 +337,27 @@ details.block p:empty {
 .inline-image {
   position: inherit!important;
   transform: none!important;
+}
+
+a.start-button {
+  background: #1ab21ab0;
+  border-radius: 15px;
+  border-width: 0;
+  font-size: larger;
+  color: var(--body-bg);
+  position: relative;
+  text-align: left;
+  display: block;
+  margin-bottom: 5px;
+  float: right;
+  padding: 3px 8px;
+}
+
+a.start-button:hover {
+  text-decoration: none;
+  color: var(--body-bg);
+}
+
+hr.popup-style {
+  border-top: 1px solid #8c8b8b;
 }

@@ -221,6 +221,21 @@ window.onload = () => {
       if (imgs[i].getAttribute("data-src") != null)
         imgs[i].setAttribute("src", imgs[i].getAttribute("data-src"));
     }
+
+  completion_show = function(page) {
+    $('[data-toggle="popover"]').popover('hide');
+    var completion = completion_tracker.getCompletionPct(page);
+    return `${Math.round(completion * 100)}% Complete`;
+  }
+
+  $('[data-toggle="popover"]').popover({
+    html: true,
+    trigger: 'click',
+    content: function () {
+      return '<img src="'+$(this).data('img') + '" />' + $(this).data('description') + '<hr class="popup-style">' + completion_show($(this).data('page')) + '<a class="start-button" href="/posts/' + $(this).data('page') + '">Start</a>';
+    },
+    container: 'body',
+  });
 };
 
 (function () {
