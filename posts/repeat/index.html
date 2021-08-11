@@ -1,0 +1,367 @@
+<!DOCTYPE html><html lang="en-US" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.2.0" /><meta property="og:title" content="Loops and Infrared" /><meta property="og:locale" content="en_US" /><meta name="description" content="A short collection of interactive and engaging problems, which aim to teach Python and Programmer mindset." /><meta property="og:description" content="A short collection of interactive and engaging problems, which aim to teach Python and Programmer mindset." /><link rel="canonical" href="https://brains4bots.site/posts/repeat/" /><meta property="og:url" content="https://brains4bots.site/posts/repeat/" /><meta property="og:site_name" content="Brains 4 Bots" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-01-01T12:00:00+11:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Loops and Infrared" /><meta name="twitter:site" content="@twitter_username" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"headline":"Loops and Infrared","dateModified":"2021-07-04T20:10:07+10:00","datePublished":"2021-01-01T12:00:00+11:00","description":"A short collection of interactive and engaging problems, which aim to teach Python and Programmer mindset.","url":"https://brains4bots.site/posts/repeat/","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://brains4bots.site/posts/repeat/"},"@context":"https://schema.org"}</script><title>Loops and Infrared | Brains 4 Bots</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Brains 4 Bots"><meta name="application-name" content="Brains 4 Bots"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script defer src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script async src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script> // see: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options> MathJax = { tex: { inlineMath: [ // start/end delimiter pairs for in-line math ['$','$'], ['\\(','\\)'] ], displayMath: [ // start/end delimiter pairs for display math ['$$', '$$'], ['\\[', '\\]'] ] } }; </script> <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"> </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@5.2/distr/fira_code.css"> <script src="/assets/js/completion.js"></script> <script src="/assets/js/hints.js"></script> <script src="/assets/js/dialog.js"></script><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <script src="/assets/js/blocks.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=G-2EC54QWECY"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-2EC54QWECY'); }); </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end" lang=""><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src="/assets/img/favicons/sidebar.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">Brains 4 Bots</a></div><div class="site-subtitle font-italic">Learn by Solving</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center"> <a href="https://github.com/glipR" aria-label="github" class="order-3" target="_blank" rel="noopener"> <i class="fab fa-github-alt"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['jgoerner','outlook.com'].join('@')" aria-label="email" class="order-4" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" class="order-5" > <i class="fas fa-rss"></i> </a> <span class="icon-border order-2"></span> <span id="mode-toggle-wrapper" class="order-1"> <i class="mode-toggle fas fa-adjust"></i> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } var self = this; /* always follow the system prefers */ this.sysDarkPrefers.addListener(function() { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.updateMermaid(); }); } /* constructor() */ setDark() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_KEY); sessionStorage.removeItem(ModeToggle.MODE_KEY); } get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode == ModeToggle.DARK_MODE; } get isLightMode() { return this.mode == ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer) ) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } updateMermaid() { if (typeof mermaid !== "undefined") { let expectedTheme = (this.modeStatus === ModeToggle.DARK_MODE? "dark" : "default"); let config = { theme: expectedTheme }; /* re-render the SVG › <https://github.com/mermaid-js/mermaid/issues/311#issuecomment-332557344> */ $(".mermaid").each(function() { let svgCode = $(this).prev().children().html(); $(this).removeAttr("data-processed"); $(this).html(svgCode); }); mermaid.initialize(config); mermaid.init(undefined, ".mermaid"); } } flipMode() { if (this.hasMode) { if (this.isSysDarkPrefer) { if (this.isLightMode) { this.clearMode(); } else { this.setLight(); } } else { if (this.isDarkMode) { this.clearMode(); } else { this.setDark(); } } } else { if (this.isSysDarkPrefer) { this.setLight(); } else { this.setDark(); } } this.updateMermaid(); } /* flipMode() */ } /* ModeToggle */ let toggle = new ModeToggle(); $(".mode-toggle").click(function() { toggle.flipMode(); }); </script> </span></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Home </a> </span> <span>Loops and Infrared</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>Loops and Infrared</h1><div class="post-content"><div id="dialog_entry"><p>Now it’s starting to get interesting, and our robots are taking shape.</p><p>This workshop we’ll start following a ball (or alien?), and introduce the next tool in our toolbox - The <code class="language-python highlighter-rouge"><span class="k">while</span></code> loop!</p><p>We’ll finish by hunting some aliens, and counting how many different coloured ones we see:</p><div style="text-align: center"><p><img data-proofer-ignore data-src="/assets/img/alien.gif" alt="test2" width="70%" /></p></div></div><h2 id="what-are-they-and-why-do-we-need-them">What are they and why do we need them?</h2><p>While conditionals have allowed us to make code that reacts to its environment, we were still somewhat limited. For example, in the maze workshop from last week, your solution likely just copy/pasted the same code three times over, to clear the 3 gates.</p><p>Coming back to the cooking recipe, you are often instructed to continue repeating a task until a certain condition is met, for example whisking a mixture until all the lumps are gone. Python has a very similar tool called the <code class="language-python highlighter-rouge"><span class="k">while</span></code> loop.</p><p>The <code class="language-python highlighter-rouge"><span class="k">while</span></code> loop follows almost identical structure to the <code class="language-python highlighter-rouge"><span class="k">if</span></code> statement, with an expression, <code class="language-python highlighter-rouge"><span class="p">:</span></code>, and indent:</p><div class="code_container"><div lang="python" class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"x: "</span><span class="p">))</span>
+
+<span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"x is </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s">."</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Now </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s">."</span><span class="p">)</span>
+</pre></table></code></div></div><div lang="text" class="language-text highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre>### Output ###
+&gt;&gt;&gt; x: 5
+&gt;&gt;&gt; x is 5.
+&gt;&gt;&gt; x is 4.
+&gt;&gt;&gt; x is 3.
+&gt;&gt;&gt; x is 2.
+&gt;&gt;&gt; x is 1.
+&gt;&gt;&gt; Now 0.
+</pre></table></code></div></div></div><p>However, rather than executing the indented code only if the expression <code class="language-python highlighter-rouge"><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span></code> is <code class="language-python highlighter-rouge"><span class="bp">True</span></code>, the <code class="language-python highlighter-rouge"><span class="k">while</span></code> loop keeps executing the indented code <strong>as long as</strong> the expression <code class="language-python highlighter-rouge"><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span></code> remains <code class="language-python highlighter-rouge"><span class="bp">True</span></code>. The above code is the same as the following trail of conditionals:</p><div lang="python" class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre><td class="rouge-code"><pre><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"x: "</span><span class="p">))</span>
+
+<span class="c1"># Check condition
+</span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="c1"># Execute indented code
+</span>    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"x is </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s">."</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="c1"># Check condition
+</span>    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Execute indented code
+</span>        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"x is </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s">."</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="c1"># Check condition
+</span>        <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># Execute indented code
+</span>            <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"x is </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s">."</span><span class="p">)</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="c1"># This continues on forever...
+</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Now </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s">."</span><span class="p">)</span>
+</pre></table></code></div></div><div class="note" title="Stopping Code" open="1"><p>Now we can have programs that run forever, so how do we stop them?</p><p>If you are running your programs through the command line, then you can stop them by pressing Ctrl + C.</p><p>If you are running them in EV3Sim, then you can stop them by exiting the simulation, or restarting the bot.</p></div><div class="puzzle" title="Moving Shapes"><p>Bert has some code to make his robot move repeatedly in a square:</p><div lang="python" class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">ev3dev2.motor</span> <span class="kn">import</span> <span class="n">LargeMotor</span><span class="p">,</span> <span class="n">OUTPUT_A</span><span class="p">,</span> <span class="n">OUTPUT_B</span>
+
+<span class="n">left</span> <span class="o">=</span> <span class="n">LargeMotor</span><span class="p">(</span><span class="n">OUTPUT_A</span><span class="p">)</span>
+<span class="n">right</span> <span class="o">=</span> <span class="n">LargeMotor</span><span class="p">(</span><span class="n">OUTPUT_B</span><span class="p">)</span>
+
+<span class="c1"># Get in position
+</span><span class="n">left</span><span class="p">.</span><span class="n">on_for_seconds</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">right</span><span class="p">.</span><span class="n">on_for_seconds</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)</span>
+
+<span class="c1"># Rotate left, wait for robots sliding a bit.
+</span><span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">left</span><span class="p">.</span><span class="n">on_for_seconds</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mf">2.37</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">right</span><span class="p">.</span><span class="n">on_for_seconds</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">2.37</span><span class="p">)</span>
+<span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">left</span><span class="p">.</span><span class="n">on_for_seconds</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mf">2.398</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">right</span><span class="p">.</span><span class="n">on_for_seconds</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mf">2.398</span><span class="p">)</span>
+
+<span class="c1"># Repeat forever
+</span><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="c1"># Rotate right, wait for robots sliding a bit.
+</span>    <span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">.</span><span class="n">on_for_seconds</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">2.37</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">.</span><span class="n">on_for_seconds</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mf">2.37</span><span class="p">)</span>
+    <span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="c1"># move in a line
+</span>    <span class="n">left</span><span class="p">.</span><span class="n">on_for_seconds</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">.</span><span class="n">on_for_seconds</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/assets/img/move_square.gif" alt="Example of square movement" /></p><p>Try recreating Bert’s bot and ensuring this code works. He now wants the robot to move in a diamond pattern, as this gif demonstrates:</p><p><img data-proofer-ignore data-src="/assets/img/move_diamond.gif" alt="Example of diamond movement" /></p><p>Can you help him?</p><div><div class="hint" key="patterns" title="Hint"><p>First modify the stuff outside the <code class="language-python highlighter-rouge"><span class="k">while</span></code> to position the bot correctly (Forward, then rotate 45 degrees to the right). In the while loop, make it so that we move forward, and then rotate left 90 degrees (We already rotate right 90 degrees in the loop, so what do we change?)</p></div></div></div><div class="continue"></div><h2 id="using-infrared-sensors">Using Infrared Sensors</h2><p>In the previous workshop we began working with color and ultrasonic sensors. This workshop we’ll work with a very powerful and slightly more complicated sensor - The infrared sensor.</p><p>The infrared (or IR) sensor is what we use to track the ball when playing a game of soccer. It does this by looking for the ball with 5 small sensors, all pointing in slightly different directions. So if the left sensors are more strongly sensing the ball than the right sensors, we know the ball is to the left of the robot.</p><p>To connect to the infrared sensors requires a bit more effort in our programming:</p><div lang="python" class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">ev3dev2.sensor</span> <span class="kn">import</span> <span class="n">Sensor</span><span class="p">,</span> <span class="n">INPUT_1</span>
+
+<span class="c1"># Connect to the sensor
+</span><span class="n">infrared</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="n">INPUT_1</span><span class="p">,</span> <span class="n">driver_name</span><span class="o">=</span><span class="s">"ht-nxt-ir-seek-v2"</span><span class="p">)</span>
+<span class="c1"># Set the mode to what we want
+</span><span class="n">infrared</span><span class="p">.</span><span class="n">mode</span> <span class="o">=</span> <span class="s">"AC-ALL"</span>
+
+<span class="c1"># Gather information
+</span><span class="n">direction</span> <span class="o">=</span> <span class="n">infrared</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">very_left</span> <span class="o">=</span> <span class="n">infrared</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">slightly_left</span> <span class="o">=</span> <span class="n">infrared</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">middle</span> <span class="o">=</span> <span class="n">infrared</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">slightly_right</span> <span class="o">=</span> <span class="n">infrared</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">very_right</span> <span class="o">=</span> <span class="n">infrared</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s">"Direction: </span><span class="si">{</span><span class="n">direction</span><span class="si">}</span><span class="s">."</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s">"Sensor values: </span><span class="si">{</span><span class="n">very_left</span><span class="si">}</span><span class="s">, </span><span class="si">{</span><span class="n">slightly_left</span><span class="si">}</span><span class="s">, </span><span class="si">{</span><span class="n">middle</span><span class="si">}</span><span class="s">, </span><span class="si">{</span><span class="n">slightly_right</span><span class="si">}</span><span class="s">, </span><span class="si">{</span><span class="n">very_right</span><span class="si">}</span><span class="s">."</span>
+<span class="p">)</span>
+</pre></table></code></div></div><p>Rather than using something specific, like we did with <code class="language-python highlighter-rouge"><span class="n">ColorSensor</span></code> and <code class="language-python highlighter-rouge"><span class="n">UltrasonicSensor</span></code>, we instead need to use the basic <code class="language-python highlighter-rouge"><span class="n">Sensor</span></code> connection, and specify a driver name.</p><p>What’s worse is that rather than having useful methods like <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">rgb</span></code> and <code class="language-python highlighter-rouge"><span class="n">distance_centimeters</span></code>, we gather different bits of data using the <code class="language-python highlighter-rouge"><span class="n">value</span></code> call.</p><p><img data-proofer-ignore data-src="/assets/img/infrared.png" alt="Picture explaining infrared values" /></p><p>As you can see in the code, <code class="language-python highlighter-rouge"><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></code> is the predicted direction of the ball. This is a value from 0 to 9, with 0 meaning no signal, and 1 to 9 meaning far left to far right (with 5 meaning centered).</p><p><code class="language-python highlighter-rouge"><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">value</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code> and so on then give you the specific signal strengths for the 5 smaller sensors, from left to right. These also range from 0 to 9, where 0 means no signal, and 9 means highest possible signal.</p><div class="puzzle" title="Ball Following"><p>Using the soccer simulation and an infrared sensor, code a robot that follows the ball.</p><p>You can use the following template code to get started:</p><div lang="python" class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">ev3dev2.motor</span> <span class="kn">import</span> <span class="n">LargeMotor</span><span class="p">,</span> <span class="n">OUTPUT_A</span><span class="p">,</span> <span class="n">OUTPUT_B</span>
+<span class="kn">from</span> <span class="nn">ev3dev2.sensor</span> <span class="kn">import</span> <span class="n">Sensor</span><span class="p">,</span> <span class="n">INPUT_1</span>
+
+<span class="c1"># Two motors means we have some control over our direction.
+</span><span class="n">left</span> <span class="o">=</span> <span class="n">LargeMotor</span><span class="p">(</span><span class="n">OUTPUT_A</span><span class="p">)</span>
+<span class="n">right</span> <span class="o">=</span> <span class="n">LargeMotor</span><span class="p">(</span><span class="n">OUTPUT_B</span><span class="p">)</span>
+
+<span class="n">ir_sensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="n">INPUT_1</span><span class="p">,</span> <span class="n">driver_name</span><span class="o">=</span><span class="s">"ht-nxt-ir-seek-v2"</span><span class="p">)</span>
+<span class="n">ir_sensor</span><span class="p">.</span><span class="n">mode</span> <span class="o">=</span> <span class="s">"AC-ALL"</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">direction</span> <span class="o">=</span> <span class="n">ir_sensor</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Start rotating the bot around, so that we eventually find the ball.
+</span>        <span class="c1"># Something like this?
+</span>        <span class="n">left</span><span class="p">.</span><span class="n">on</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+        <span class="n">right</span><span class="p">.</span><span class="n">on</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">direction</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="c1"># TODO: The ball is to the left of us. Turn to it.
+</span>        <span class="k">pass</span>
+    <span class="c1"># continue ...
+</span>
+    <span class="c1"># Wait a bit before checking again.
+</span>    <span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+
+</pre></table></code></div></div><p>Here’s what it should look like, with motors and sensor info removed:</p><p><img data-proofer-ignore data-src="/assets/img/follow.gif" alt="Example of puzzle being completed" /></p><div><div class="hint" key="following" title="Hint"><p>When <code class="language-python highlighter-rouge"><span class="n">direction</span> <span class="o">&lt;</span> <span class="mi">5</span></code>, we want to move forward, but also to the left a bit. Something like <code class="language-python highlighter-rouge"><span class="n">left</span><span class="p">.</span><span class="n">on</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span></code> and <code class="language-python highlighter-rouge"><span class="n">right</span><span class="p">.</span><span class="n">on</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span></code> will probably work. Now just fill in <code class="language-python highlighter-rouge"><span class="n">direction</span> <span class="o">==</span> <span class="mi">5</span></code> and <code class="language-python highlighter-rouge"><span class="n">direction</span> <span class="o">&gt;</span> <span class="mi">5</span></code>.</p></div></div></div><div class="continue"></div><h2 id="advanced-usage">Advanced Usage</h2><p><code class="language-python highlighter-rouge"><span class="k">while</span></code> loops already open up a bunch of possibilities. For example, we can keep track of counters in our <code class="language-python highlighter-rouge"><span class="k">while</span></code> loops to run the indented code with different variable values:</p><div class="code_container"><div lang="python" class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Print x * x while it is &lt;= 50.
+</span><span class="k">while</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">:</span>
+    <span class="n">square</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s">^2 = </span><span class="si">{</span><span class="n">square</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></table></code></div></div><div lang="text" class="language-text highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre>### Output ###
+&gt;&gt;&gt; 1^2 = 1
+&gt;&gt;&gt; 2^2 = 4
+&gt;&gt;&gt; 3^2 = 9
+&gt;&gt;&gt; 4^2 = 16
+&gt;&gt;&gt; 5^2 = 25
+&gt;&gt;&gt; 6^2 = 36
+&gt;&gt;&gt; 7^2 = 49
+</pre></table></code></div></div></div><div class="puzzle" title="Different Numbers"><p>You can download the puzzle <a href="ev3simc://drive.google.com/uc?export=download&amp;id=12S2DQAS9KchqAOMo2djMq42ComJ0Mo6d">here</a>.</p><p>After understanding the code above, you want to modify it to print 3 different sequences:</p><p><img data-proofer-ignore data-src="/assets/img/sequences.gif" alt="Example of puzzle being completed." /></p><ul><li>Part 1 (Easy): Print the cube numbers <code class="language-python highlighter-rouge"><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span></code> less than 100. (1, 8, 27, …)</ul><div><div class="hint" key="different-num-1" title="Hint"><p>Modify <code class="language-python highlighter-rouge"><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">100</span></code> and <code class="language-python highlighter-rouge"><span class="n">square</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span></code>.</p></div></div><ul><li>Part 2 (Medium): Print every second square number less than 100. (1, 9, 25, …)</ul><div><div class="hint" key="different-num-2" title="Hint"><p>Modify <code class="language-python highlighter-rouge"><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span></code> so that on the second time we reach this point, <code class="language-python highlighter-rouge"><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span></code>.</p></div></div><ul><li>Part 3 (Hard): Print all powers of 2 less than 200. (2, 4, 8, 16, …)</ul><div><div class="hint" key="different-num-3" title="Hint"><p>Modify <code class="language-python highlighter-rouge"><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span></code>, so that on the <code class="language-python highlighter-rouge"><span class="n">i</span></code>th time we run this indented code, x has the value 2 to the power of i (<code class="language-python highlighter-rouge"><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">...</span></code> <code class="language-python highlighter-rouge"><span class="n">i</span></code> times).</p></div></div></div><p>Just like we found out with <code class="language-python highlighter-rouge"><span class="k">if</span></code> and <code class="language-python highlighter-rouge"><span class="k">else</span></code>, we can have <code class="language-python highlighter-rouge"><span class="k">while</span></code> loops within <code class="language-python highlighter-rouge"><span class="k">while</span></code> loops, by indenting further and further:</p><div class="code_container"><div lang="python" class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Repeat 3 times
+</span><span class="k">while</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Here are the first </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s"> numbers!"</span><span class="p">)</span>
+    <span class="c1"># Repeat x times
+</span>    <span class="k">while</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></table></code></div></div><div lang="text" class="language-text highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre>### Output ###
+&gt;&gt;&gt; Here are the first 1 numbers!
+&gt;&gt;&gt; 1
+&gt;&gt;&gt; Here are the first 2 numbers!
+&gt;&gt;&gt; 1
+&gt;&gt;&gt; 2
+&gt;&gt;&gt; Here are the first 3 numbers!
+&gt;&gt;&gt; 1
+&gt;&gt;&gt; 2
+&gt;&gt;&gt; 3
+</pre></table></code></div></div></div><div class="puzzle" title="Times Tables"><p>You can download the puzzle <a href="ev3simc://drive.google.com/uc?export=download&amp;id=1MOtJf--_uAO-aPbV34ItY_OcLT64AysG">here</a>.</p><p>Jacob the mathemagician is back! Although this time he isn’t really doing a trick, just reciting his times tables.</p><p>He has asked you to write a program to make this easier for him, so that Jacob can enter two numbers (<code class="language-python highlighter-rouge"><span class="n">x</span></code> and <code class="language-python highlighter-rouge"><span class="n">y</span></code>), and then the program prints the entire times table for numbers up to <code class="language-python highlighter-rouge"><span class="n">x</span></code> times numbers up to <code class="language-python highlighter-rouge"><span class="n">y</span></code>.</p><p><img data-proofer-ignore data-src="/assets/img/times_tables.gif" alt="Example gif of puzzle being completed" /></p><div><div class="hint" key="times_tables-1" title="Hint 1"><p>We had a loop before that let us repeat code <code class="language-python highlighter-rouge"><span class="n">x</span></code> many times. Using two loops, one inside the other, we can repeat the innermost code <code class="language-python highlighter-rouge"><span class="n">x</span> <span class="o">*</span> <span class="n">y</span></code> times, by having the outer loop repeat <code class="language-python highlighter-rouge"><span class="n">x</span></code> times and the inner loop repeat <code class="language-python highlighter-rouge"><span class="n">y</span></code> times:</p><div lang="python" class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="n">counter1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">counter1</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">:</span>
+    <span class="n">counter2</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">counter2</span> <span class="o">&lt;=</span> <span class="n">y</span><span class="p">:</span>
+        <span class="c1"># Do something with counter1 and counter2 here
+</span>        <span class="c1"># This will get run x * y times.
+</span>        <span class="n">counter2</span> <span class="o">=</span> <span class="n">counter2</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">counter1</span> <span class="o">=</span> <span class="n">counter1</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></table></code></div></div></div><div class="hint" key="times_tables-2" title="Hint 2"><p>Well, since <code class="language-python highlighter-rouge"><span class="n">counter1</span></code> and <code class="language-python highlighter-rouge"><span class="n">counter2</span></code> are ranging from <code class="language-python highlighter-rouge"><span class="mi">1</span></code> to <code class="language-python highlighter-rouge"><span class="n">x</span></code> and <code class="language-python highlighter-rouge"><span class="mi">1</span></code> to <code class="language-python highlighter-rouge"><span class="n">y</span></code>, why not print <code class="language-python highlighter-rouge"><span class="n">counter1</span> <span class="o">*</span> <span class="n">counter2</span></code>?</p><div lang="python" class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="n">counter1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">counter1</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">:</span>
+    <span class="n">counter2</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">counter2</span> <span class="o">&lt;=</span> <span class="n">y</span><span class="p">:</span>
+        <span class="c1"># print counter1 * counter2
+</span>        <span class="n">counter2</span> <span class="o">=</span> <span class="n">counter2</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">counter1</span> <span class="o">=</span> <span class="n">counter1</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></table></code></div></div></div></div></div><div class="continue"></div><div class="puzzle" title="Higher / Lower"><p>You can download the puzzle <a href="ev3simc://drive.google.com/uc?export=download&amp;id=1UYeqgAG5l3gMdX1gZS5evTrC60n936QJ">here</a>.</p><p>A classic and simple game to play is higher / lower. The computer will choose a number between 1 and 100, and you have to guess that number. You’ve been asked to implement this game for your friend Rachel.</p><p>You need to modify the code given so that it correctly prints either “Higher”, “Lower”, or “Correct”, based on the guesses given, until the user gets the number correct. After this, the program should exit.</p><p>Test the game with a few different values to make sure it works.</p><p><img data-proofer-ignore data-src="/assets/img/higher.gif" alt="Example gif of puzzle being completed." /></p><div><div class="hint" key="higher-lower-1" title="Hint 1"><p>If you want to repeat something (like ask for guesses) until a certain condition is met, we need <code class="language-python highlighter-rouge"><span class="k">while</span> <span class="n">condition</span><span class="p">:</span></code>.</p><p>When should <code class="language-python highlighter-rouge"><span class="n">condition</span></code> change? Should condition be a variable?</p></div><div class="hint" key="higher-lower-2" title="Hint 2"><p>Create a variable, <code class="language-python highlighter-rouge"><span class="n">guessed_correctly</span> <span class="o">=</span> <span class="bp">False</span></code>, to store whether player 2 has guessed the number yet. Then you can put most of the code inside a loop that starts with <code class="language-python highlighter-rouge"><span class="k">while</span> <span class="ow">not</span> <span class="n">guessed_correctly</span><span class="p">:</span></code></p></div></div></div><h2 id="project-time">Project time!</h2><div class="project" title="Alien Hunt"><p>You can download the puzzle <a href="ev3simc://drive.google.com/uc?export=download&amp;id=1kjSO2CYkeugJ-FNNXVSy3HQ4fWiBi_2b">here</a>.</p><p>You and your team has recently discovered that multiple different coloured aliens are inhabiting Mars! Luckily, you can send a rover over to investigate. These Aliens emit infrared waves (exactly the same as the ball earlier, what a coincidence!) that your robot can use to locate them.</p><p>Your task is to move right next to the alien, and identify whether they are red, green, blue or black. If the alien is red, green or blue, you should print this (“Alien is red!” or something), and then keep searching for the next alien.</p><p>If the alien is black, your program should then print how many red, green and blue Aliens you’ve seen, and then finish the program.</p><p><img data-proofer-ignore data-src="/assets/img/alien.gif" alt="Example gif of the puzzle being completed" /></p><div><div class="hint" key="project-1" title="Hint 1">You can first reuse the code you made to follow the ball, earlier on this page.</div><div class="hint" key="project-2" title="Hint 2"><p>Provided you got that working, the next thing you need to worry about is detecting when you are close enough to the robot to detect it’s colour. Here are two options:</p><ul><li>Attach an ultrasonic sensor to your robot, and you are close to the robot when the sensor says you are less than ten centimeters away, or something like this.<li>When the colour sensor does not read white as the current ground colour, you must be in one of the circles.</ul><p>Use this to then record the colour of the robot, print it, and then continue searching.</p></div><div class="hint" key="project-3" title="Hint 3"><p>Modifying the solution you had earlier, you might have the following snippet of code in your while loop:</p><div lang="python" class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre><td class="rouge-code"><pre><span class="k">while</span> <span class="p">...</span>
+  <span class="n">direction</span> <span class="o">=</span> <span class="n">ir_sensor</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  <span class="p">...</span>
+  <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="c1"># Straight ahead
+</span>    <span class="n">is_close</span> <span class="o">=</span> <span class="c1"># Do one of the checks outlined in Hint 2
+</span>    <span class="k">if</span> <span class="n">is_close</span><span class="p">:</span>
+      <span class="n">left_motor</span><span class="p">.</span><span class="n">off</span><span class="p">()</span>
+      <span class="n">right_motor</span><span class="p">.</span><span class="n">off</span><span class="p">()</span>
+      <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">color_sensor</span><span class="p">.</span><span class="n">rgb</span>
+      <span class="k">if</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="n">g</span> <span class="o">+</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Red!"</span><span class="p">)</span>
+        <span class="n">red_count</span> <span class="o">=</span> <span class="n">red_count</span> <span class="o">+</span> <span class="mi">1</span>
+      <span class="k">elif</span> <span class="p">...</span><span class="c1"># Complete this yourself.
+</span>
+      <span class="c1"># Wait a bit for the robot to start following again.
+</span>      <span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="c1"># Go forward
+</span>      <span class="n">left_motor</span><span class="p">.</span><span class="n">on</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+      <span class="n">right_motor</span><span class="p">.</span><span class="n">on</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+</pre></table></code></div></div></div></div></div></div><div class="post-tail-wrapper text-muted"><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU GPL V3</a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=Loops and Infrared - Brains 4 Bots&url=https://brains4bots.site/posts/repeat/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=Loops and Infrared - Brains 4 Bots&u=https://brains4bots.site/posts/repeat/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=Loops and Infrared - Brains 4 Bots&url=https://brains4bots.site/posts/repeat/" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://brains4bots.site/posts/repeat/" data-toggle="tooltip" data-placement="top" title="Linkedin" target="_blank" rel="noopener" aria-label="Linkedin"> <i class="fa-fw fab fa-linkedin"></i> </a> <i class="fa-fw fas fa-link small" onclick="copyLink('', '')" data-toggle="tooltip" data-placement="top" title=""> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"> <script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">Contents</span><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div class="post-navigation d-flex justify-content-between"> <a href="/posts/if-else" class="btn btn-outline-primary" prompt="Previous"><p>Sensors and Conditionals</p></a> <a href="/posts/lists" class="btn btn-outline-primary" prompt="Next"><p>Lists and Compass</p></a></div><div id="disqus" class="pt-2 pb-2"><p class="text-center text-muted small pb-5"> Comments powered by <a href="https://disqus.com/">Disqus</a>.</p></div><script src="/assets/js/lib/jquery.disqusloader.min.js"></script> <script> const options = { scriptUrl: '//brains4bots.disqus.com/embed.js', disqusConfig: function() { this.page.title = 'Loops and Infrared'; this.page.url = 'https://brains4bots.site/posts/repeat/'; this.page.identifier = '/posts/repeat/'; } }; $.disqusLoader('#disqus', options); </script></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2021 <a href="https://github.com/glipR">Jackson Goerner</a>.</p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">Trending Tags</h4></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="https://brains4bots.site{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script async src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script> // see: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options> MathJax = { tex: { inlineMath: [ // start/end delimiter pairs for in-line math ['$','$'], ['\\(','\\)'] ], displayMath: [ // start/end delimiter pairs for display math ['$$', '$$'], ['\\[', '\\]'] ] } }; </script> <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"> </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@5.2/distr/fira_code.css"> <script src="/assets/js/completion.js"></script> <script src="/assets/js/hints.js"></script> <script src="/assets/js/dialog.js"></script><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <script src="/assets/js/blocks.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=G-2EC54QWECY"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-2EC54QWECY'); }); </script>
